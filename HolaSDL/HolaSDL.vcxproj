@@ -67,6 +67,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Error.cpp" />
     <ClCompile Include="GloboA.cpp" />
     <ClCompile Include="GlobosPG.cpp" />
     <ClCompile Include="juegoPG.cpp" />
@@ -77,6 +78,7 @@
     <ClCompile Include="TexturasSDL.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Error.h" />
     <ClInclude Include="GloboA.h" />
     <ClInclude Include="GlobosPG.h" />
     <ClInclude Include="juegoPG.h" />

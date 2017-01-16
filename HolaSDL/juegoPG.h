@@ -2,6 +2,7 @@
 #include "SDL.h"
 #include "TexturasSDL.h"
 #include "ObjetoJuego.h"
+
 // Practica realizada por Blanca Macazaga Zuazo y Adrián Alcántara Delgado
 #include <vector>
 
@@ -30,7 +31,7 @@ public:
 
 private:
 	int dim = 10; //10; //dimension del array de los globos
-
+	
 	bool initSDL();
 	void closeSDL();
 	bool initObjetos();

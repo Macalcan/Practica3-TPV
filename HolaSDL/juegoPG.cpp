@@ -10,10 +10,12 @@
 #include "GlobosPG.h"
 #include "GloboA.h"
 #include "ObjetoPG.h"
+#include "Error.h"
 using namespace std;
 
 juegoPG::juegoPG()
 {
+	
 	srand(SDL_GetTicks());
 
 	SDL_Window * pWindow = nullptr;
@@ -25,6 +27,9 @@ juegoPG::juegoPG()
 	pausa = false; //se se pulsa p es true y se para la actualizacion de los globos
 	puntos = 0; //puntos al comenzar el juego
 	initSDL();
+	/*Error errorM("No carga SDL");
+	if (!initSDL())
+		throw (errorM);*/
 
 	//metemos las rutas de texturas
 	rutasText.emplace_back("..\\bmps\\sky.jpg");
