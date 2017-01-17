@@ -20,8 +20,7 @@ MariposaPG::MariposaPG(juegoPG* jueg, juegoPG::Texturas_t texturas, int px, int 
 
 	rectObjeto.w = 72;
 	rectObjeto.h = 72;
-	rectObjeto.x = px;
-	rectObjeto.y = py;
+	
 }
 
 void MariposaPG::draw() {

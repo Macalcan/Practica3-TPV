@@ -15,7 +15,6 @@ using namespace std;
 
 juegoPG::juegoPG()
 {
-	
 	srand(SDL_GetTicks());
 
 	SDL_Window * pWindow = nullptr;
@@ -26,10 +25,9 @@ juegoPG::juegoPG()
 	gameOver = false; //si se acaba el juego se pondrá a true
 	pausa = false; //se se pulsa p es true y se para la actualizacion de los globos
 	puntos = 0; //puntos al comenzar el juego
-	initSDL();
-	/*Error errorM("No carga SDL");
-	if (!initSDL())
-		throw (errorM);*/
+	Error errorM("No se carga SDL");
+	if(!initSDL())
+		throw errorM;
 
 	//metemos las rutas de texturas
 	rutasText.emplace_back("..\\bmps\\sky.jpg");

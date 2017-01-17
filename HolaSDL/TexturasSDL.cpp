@@ -38,9 +38,7 @@ bool TexturasSDL::load(SDL_Renderer* pRenderer, string const& nombArch)
 //--------------------------------------------------------------------------------//
 //dibuja las texturas
 void TexturasSDL::draw(SDL_Renderer* pRenderer, SDL_Rect  &rect, SDL_Rect const& RFrame){
-	/*SDL_Rect tRect;
-	tRect = { 0, 0, alto, ancho };*/
-	SDL_RenderCopy(pRenderer, pTextura, &RFrame, &rect);
+		SDL_RenderCopy(pRenderer, pTextura, &RFrame, &rect);
 
 }
 //--------------------------------------------------------------------------------//

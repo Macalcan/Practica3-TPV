@@ -8,14 +8,15 @@ PremioPG::PremioPG(juegoPG* jueg, juegoPG::Texturas_t texturas, int px, int py) 
 	rectObjeto.w = rectObjeto.h = 50;
 	puntosIni = puntos = 15;
 	intento = 3;
+	
 
 }
 
 
 //--------------------------------------------------------------------------------//
 void PremioPG::update() {
-	if (puntos > 0)
-		puntos -= 5;
+	/*if (puntos > 0)
+		puntos -= 5;*/
 }
 //--------------------------------------------------------------------------------//
 bool PremioPG::onClick() {
@@ -24,13 +25,14 @@ bool PremioPG::onClick() {
 		juego->newPuntos(this);
 		juego->newBaja(this);
 		reiniciaPremio();
-		visible = false;
+		//visible = false;
 		return true;
 	}
 
 	else if (intento > 0) {
 		
 		intento--;
+		puntos -= 5;
 		if(intento == 0){
 			juego->newBaja(this);
 			reiniciaPremio();
@@ -38,7 +40,7 @@ bool PremioPG::onClick() {
 		return false;
 	}
 
-	else return false;
+	//else return false;
 }
 //--------------------------------------------------------------------------------//
 //getter de puntos del globo

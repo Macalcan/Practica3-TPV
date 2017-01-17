@@ -19,12 +19,6 @@ protected:
 	
 	// sustituye al puntero a la textura y al renderizador de la clase Globo
 	juegoPG* juego;
-	
-
-	//int x;
-	//int y;
-	//int alto;
-	//int ancho;
 	SDL_Rect rectObjeto;
 	juegoPG::Texturas_t texturasa;
 };
