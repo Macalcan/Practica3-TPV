@@ -108,6 +108,16 @@ void juegoPG::freeTexturas() {
 	texturas[Tmariposa] = nullptr;
 	delete (texturas[Tpremio]);
 	texturas[Tpremio] = nullptr;
+	delete (texturas[TPlay]);
+	texturas[TPlay] = nullptr;
+	/*delete (texturas[]);
+	texturas[] = nullptr;
+	delete (texturas[]);
+	texturas[] = nullptr;
+	delete (texturas[]);
+	texturas[] = nullptr;
+	delete (texturas[]);
+	texturas[] = nullptr;*/
 	//destruye las texturas de los globos
 }
 //--------------------------------------------------------------------------------//
