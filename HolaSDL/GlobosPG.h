@@ -7,7 +7,7 @@
 class GlobosPG: public ObjetoPG
 {
 public:
-	GlobosPG(juegoPG* juego, juegoPG::Texturas_t texturas, int px, int py);
+	GlobosPG(juegoPG* juego, Texturas_t texturas, int px, int py);
 	GlobosPG();
 	bool onClick();
 	virtual int getPuntos();

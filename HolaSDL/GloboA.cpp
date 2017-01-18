@@ -2,10 +2,11 @@
 #ifndef _H_GloboA_H
 #define _H_GloboA_H
 #include "GloboA.h"
+#include "PlayPG.h"
 using namespace std;
 
 
-GloboA::GloboA(juegoPG* jueg, juegoPG::Texturas_t texturas, int &px, int &py) :GlobosPG(jueg, texturas, px, py)
+GloboA::GloboA(juegoPG* jueg, Texturas_t texturas, int &px, int &py) :GlobosPG(jueg, texturas, px, py)
 {
 	//visible = true;
 	/*visible = true;
@@ -27,7 +28,9 @@ void GloboA::update(){
 		if (inflado <= 0){
 			explotado = true;
 			visible = true;
-			juego->newBaja(this);
+			if (dynamic_cast<PlayPG*>(juego->topState())){
+				dynamic_cast<PlayPG*>(juego->topState())->newBaja(this);
+			}
 		}
 		else {
 

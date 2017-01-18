@@ -1,5 +1,3 @@
-#ifndef _H_GameOverPG_H_
-#define _H_GameOverPG_H_
 #include "GameOverPG.h"
 #include "juegoPG.h"
 #include "BotonPG.h"
@@ -22,4 +20,3 @@ GameOverPG::~GameOverPG()
 	delete objetos[1];
 	objetos[1] = nullptr;
 }
-#endif

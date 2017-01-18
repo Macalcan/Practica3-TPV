@@ -1,6 +1,5 @@
 #include "BotonPG.h"
-#ifndef _H_BotonPG_H
-#define _H_BotonPG_H
+
 
 BotonPG::BotonPG(juegoPG* juego, CallBack_t * cb, Texturas_t texturas, int px, int py) : ObjetoPG(juego, texturas, px, py)
 {
@@ -22,4 +21,4 @@ BotonPG::~BotonPG()
 {
 }
 
-#endif
+

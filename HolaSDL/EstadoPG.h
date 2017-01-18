@@ -8,12 +8,13 @@ class EstadoPG : public EstadoJuego
 public:
 	EstadoPG();
 	EstadoPG(juegoPG* ju);
+	virtual bool onClick();
+	virtual void update();
+	virtual void draw();
 	~EstadoPG();
 protected:
-	virtual bool onClick();
-	
-	virtual void draw();
-	juegoPG* game;
+
+	juegoPG* juego;
 	vector <ObjetoJuego*> objetos; //array de los objetos
 };
 

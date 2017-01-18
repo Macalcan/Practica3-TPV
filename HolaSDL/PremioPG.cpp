@@ -1,8 +1,8 @@
 #ifndef _H_PremioPG_H
 #define _H_PremioPG_H
 #include "PremioPG.h"
-
-PremioPG::PremioPG(juegoPG* jueg, juegoPG::Texturas_t texturas, int px, int py) : ObjetoPG(jueg, texturas, px, py)
+#include "PlayPG.h"
+PremioPG::PremioPG(juegoPG* jueg, Texturas_t texturas, int px, int py) : ObjetoPG(jueg, texturas, px, py)
 {
 	
 	rectObjeto.w = rectObjeto.h = 50;
@@ -14,16 +14,16 @@ PremioPG::PremioPG(juegoPG* jueg, juegoPG::Texturas_t texturas, int px, int py) 
 
 
 //--------------------------------------------------------------------------------//
-void PremioPG::update() {
-	/*if (puntos > 0)
-		puntos -= 5;*/
-}
+
 //--------------------------------------------------------------------------------//
 bool PremioPG::onClick() {
 	
 	if (ObjetoPG::onClick()) {
-		juego->newPuntos(this);
-		juego->newBaja(this);
+		if (dynamic_cast<PlayPG*>(juego->topState())) {
+			dynamic_cast<PlayPG*>(juego->topState())->newPuntos(this);
+			dynamic_cast<PlayPG*>(juego->topState())->newBaja(this);
+		}
+		
 		reiniciaPremio();
 		//visible = false;
 		return true;
@@ -34,7 +34,8 @@ bool PremioPG::onClick() {
 		intento--;
 		puntos -= 5;
 		if(intento == 0){
-			juego->newBaja(this);
+			if (dynamic_cast<PlayPG*>(juego->topState())) 
+				dynamic_cast<PlayPG*>(juego->topState())->newBaja(this);
 			reiniciaPremio();
 		}
 		return false;

@@ -2,6 +2,7 @@
 #define _H_MariposaPG_H
 #include "MariposaPG.h"
 #include <iostream>
+#include "PlayPG.h"
 using namespace std;
 
 
@@ -51,7 +52,9 @@ bool MariposaPG::onClick() {
 		rectObjeto.x = rand() % 450;
 		rectObjeto.y = rand() % 450;
 		if (contClicks == 3) {
-			juego->newPremio(); //crea premio
+			if (dynamic_cast<PlayPG*>(juego->topState())) {
+				dynamic_cast<PlayPG*>(juego->topState())->newPremio(this);
+			}
 			contClicks = 0; //contador a 0 para volver a contar los clicks para un nuevo premio
 		}
 		return true; //si se hace click en mariposa devuelve true sino false

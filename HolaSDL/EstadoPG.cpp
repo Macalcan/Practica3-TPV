@@ -7,7 +7,7 @@ EstadoPG::EstadoPG()
 
 EstadoPG::EstadoPG(juegoPG* ju)
 {
-	game = ju;
+	juego = ju;
 }
 
 bool EstadoPG::onClick(){
@@ -25,6 +25,12 @@ bool EstadoPG::onClick(){
 void EstadoPG::draw() {
 	for (int i = 0; i < objetos.size(); i++) {
 		objetos[i]->draw();
+	}
+}
+
+void EstadoPG::update(){
+	for (int i = 0; i < objetos.size(); i++) {
+		objetos[i]->update();
 	}
 }
 

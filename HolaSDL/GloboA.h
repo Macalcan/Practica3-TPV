@@ -6,7 +6,7 @@
 class GloboA : public GlobosPG
 {
 public:
-	GloboA(juegoPG* jueg, juegoPG::Texturas_t texturas, int &px, int &py);
+	GloboA(juegoPG* jueg, Texturas_t texturas, int &px, int &py);
 	
 	void update();
 	~GloboA();

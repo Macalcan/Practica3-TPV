@@ -7,7 +7,7 @@ using namespace std;
 
 
 
-GlobosPG::GlobosPG(juegoPG* jueg, juegoPG::Texturas_t texturas, int px, int py) : ObjetoPG(jueg, texturas, px, py)
+GlobosPG::GlobosPG(juegoPG* jueg, Texturas_t texturas, int px, int py) : ObjetoPG(jueg, texturas, px, py)
 {
 	visible = true;
 	puntos = 5;
