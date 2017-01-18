@@ -72,7 +72,7 @@ void PlayPG::newPremio() {
 
 }
 void PlayPG::update() {
-	for (int i = 0; i < objetos.size(); i++) {
+	for (size_t i = 0; i < objetos.size(); i++) {
 		objetos[i]->update(); //si se ha exlpotado el globo se determina en nuestro array de booleanos y desciende el numero de globos
 	}
 }
@@ -83,7 +83,7 @@ void PlayPG::draw(){
 	rect = { 0, 0, ancho, alto };
 	texturas[TFondo]->draw(juego->getRender(), rect); //dibuja el fondo
 	*/
-	for (int i = 0; i < objetos.size(); i++) { //dibuja los globos
+	for (size_t i = 0; i < objetos.size(); i++) { //dibuja los globos
 		objetos[i]->draw();
 	}
 

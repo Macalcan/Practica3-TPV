@@ -12,8 +12,8 @@ MenuPG::MenuPG(juegoPG* juego) : EstadoPG(juego)
 }
 
 void MenuPG::initObjetos(){
-	objetos.emplace_back(new BotonPG(juego, TExit, x, y, salir(juego)));
-	objetos.emplace_back(new BotonPG(juego, TPlay, x, y, jugar(juego)));
+	objetos.emplace_back(new BotonPG(juego, TExit, x, y, salir));
+	objetos.emplace_back(new BotonPG(juego, TPlay, x, y, jugar));
 }
 MenuPG::~MenuPG()
 {

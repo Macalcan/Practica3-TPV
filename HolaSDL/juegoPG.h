@@ -40,7 +40,7 @@ private:
 	bool initSDL();
 	void closeSDL();
 	
-	void render() const;
+	void render();
 	void onClick();
 	void update();
 	void handle_event();

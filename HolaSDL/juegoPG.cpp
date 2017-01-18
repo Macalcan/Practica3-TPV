@@ -117,7 +117,7 @@ EstadoJuego* juegoPG::topState() {
 
 //dibuja los globos que estan visibles, para ello deberia hacer probablemente un for recorriendo todos los globos y accediendo a su atributo visible,
 //en caso de que el globo lo sea se dibuja con draw(pRenderer), pRenderer está declarado arriba pero no asginado
-void juegoPG::render() const {
+void juegoPG::render() {
 
 	SDL_RenderClear(pRenderer); //"limpia" el render donde vamos a dibujar el siguiente frame
 

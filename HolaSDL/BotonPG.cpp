@@ -1,12 +1,8 @@
 #include "BotonPG.h"
 
 
-BotonPG::BotonPG(juegoPG* juego, Texturas_t texturas, int px, int py, CallBack_t * cb) //: ObjetoPG(juego, texturas, px, py)
+BotonPG::BotonPG(juegoPG* juego, Texturas_t texturas, int px, int py, CallBack_t * cb): ObjetoPG(juego, texturas, px, py)
 {
-	ObjetoPG::juego = juego; 
-	texturasa = texturas;
-	rectObjeto.x = px;
-	rectObjeto.y = py;
 	visible = true; //suponemos que se crea el boton al crear el estado por lo tanto es visible de forma inicial
 	rectObjeto.h = rectObjeto.w = 100;
 	cbOnClick = cb;
