@@ -4,14 +4,21 @@
 #include "EstadoPG.h"
 #include "MenuPG.h"
 #include "juegoPG.h"
+#include "PlayPg.h"
 class GameOverPG : public EstadoPG
 {
+	
 public:
-	GameOverPG(juegoPG* ju);
+	GameOverPG(juegoPG* ju, int p);
 	~GameOverPG();
 protected:
+	static int puntos;
 	void initObjetos();
-	static void showScore(juegoPG* jug) { int puntos = 59; } //REVISAR
+	static void showScore(juegoPG* jug) {
+		string puntuacion = "Puntuacion: ";
+		puntuacion += to_string(puntos);
+		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "Has terminado!!", puntuacion.c_str(), nullptr);
+	} 
 	static void menu(juegoPG* jug) { jug->stateChange(new MenuPG(jug)); }
 	
 };

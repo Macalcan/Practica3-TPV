@@ -2,9 +2,11 @@
 #include "juegoPG.h"
 #include "BotonPG.h"
 
+static int puntos = 0;
 
-GameOverPG::GameOverPG(juegoPG* ju) : EstadoPG(ju)
+GameOverPG::GameOverPG(juegoPG* ju, int p) : EstadoPG(ju)
 {
+	puntos = p;
 	initObjetos();
 }
 void GameOverPG::initObjetos(){

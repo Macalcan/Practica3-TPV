@@ -216,8 +216,6 @@ void juegoPG::run()
 }
 
 
-
-
 //--------------------------------------------------------------------------------//
 void juegoPG::getMousePos(int &mpx, int &mpy) const {
 	//hay que añadir atributos para la posicion del raton (debe actualizarse en onClick)

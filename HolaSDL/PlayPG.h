@@ -10,9 +10,10 @@ public:
 	void newBaja(ObjetoJuego* po);
 	void newPuntos(ObjetoJuego * po);
 	void newPremio();
-	int puntos;
+
 
 protected:
+	int puntos;
 	void initObjetos();
 	virtual void draw();
 	virtual void update();

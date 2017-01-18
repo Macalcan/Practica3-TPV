@@ -45,13 +45,14 @@ void PlayPG::newBaja(ObjetoJuego* po) {
 	if (dynamic_cast<GlobosPG*>(po)) {
 		numG--;
 		if (numG == 0){
-			juego->stateChange(new GameOverPG(juego));
+			juego->stateChange(new GameOverPG(juego, puntos));
 		}
 	}
 	else if (typeid(*po) == typeid(PremioPG)) {
 		dynamic_cast<PremioPG*>(po)->visible = false;
 	}
 }
+
 //--------------------------------------------------------------------------------//
 void PlayPG::newPuntos(ObjetoJuego* po) {
 	if (dynamic_cast<GlobosPG*>(po))

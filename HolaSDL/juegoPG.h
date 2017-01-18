@@ -20,7 +20,7 @@ public:
 	void run();
 	void getMousePos(int &mpx, int &mpy)const;
 	// los new van a necesitar hacer casting de clase dynamic_cast
-	
+
 	
 	
 	SDL_Renderer* getRender()const;
