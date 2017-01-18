@@ -9,8 +9,8 @@ MenuPG::MenuPG(juegoPG* juego) : EstadoPG(juego)
 
 	int x = 450 / 2;
 	int y = 450 / 2;
-	objetos.emplace_back(new BotonPG(game, salir(game), TBoton, x, y));
-	objetos.emplace_back(new BotonPG(game, jugar(game), TBoton2, x, y + 100));
+	objetos.emplace_back(new BotonPG(game, salir(game), TExit, x, y));
+	objetos.emplace_back(new BotonPG(game, jugar(game), TPlay, x, y + 100));
 }
 
 

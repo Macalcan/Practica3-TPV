@@ -12,7 +12,7 @@ public:
 protected:
 	bool initObjetos();
 	virtual void draw();
-	
+	virtual void update();
 	int numMariposas;
 	int numPremios;
 	//bool error, gameOver, exit;

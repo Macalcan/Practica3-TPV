@@ -9,8 +9,9 @@ GameOverPG::GameOverPG(juegoPG* ju) : EstadoPG(ju)
 {
 	int x = 450 / 2;
 	int y = 450 / 2;
-	objetos.emplace_back(new BotonPG(game, showScore, TBoton, x, y));
-	objetos.emplace_back(new BotonPG(game, menu, TBoton2, x, y + 100));
+	
+	objetos.emplace_back(new BotonPG(game, showScore, TScore, x, y));
+	objetos.emplace_back(new BotonPG(game, menu, TMenu, x, y + 100));
 }
 
 

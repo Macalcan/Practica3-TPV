@@ -5,7 +5,7 @@
 using namespace std;
 
 
-MariposaPG::MariposaPG(juegoPG* jueg, juegoPG::Texturas_t texturas, int px, int py) : ObjetoPG(jueg, texturas, px, py)
+MariposaPG::MariposaPG(juegoPG* jueg, Texturas_t texturas, int px, int py) : ObjetoPG(jueg, texturas, px, py)
 {
 	visible = true;
 	contClicks = 0; //aun no se le ha dado ningun click

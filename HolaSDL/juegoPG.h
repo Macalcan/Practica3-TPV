@@ -11,7 +11,7 @@
 const int ancho = 550; //dimensiones de la ventana del juego
 const int alto = 600;
 const int numText = 4;
-
+enum Texturas_t { TFondo, TGloboN, TGloboM, Tmariposa, Tpremio, TPlay, TMenu, TExit, TScore, TResume };
 
 class juegoPG
 {
@@ -22,7 +22,7 @@ public:
 	// los new van a necesitar hacer casting de clase dynamic_cast
 	
 	
-	enum Texturas_t { TFondo, TGloboN, TGloboM, Tmariposa, Tpremio };
+	
 	SDL_Renderer* getRender()const;
 	TexturasSDL* getTextura(Texturas_t et) const { return texturas[et]; } //metodo inline
 	void setSalir();
@@ -33,7 +33,7 @@ public:
 	~juegoPG();
 	int getPuntos();
 private:
-	void newPuntos(ObjetoJuego * po);
+	
 	int dim = 10; //10; //dimension del array de los globos
 	void initTexturas();
 	bool initSDL();

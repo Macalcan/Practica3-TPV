@@ -3,7 +3,7 @@
 #include "ObjetoPG.h"
 
 
-ObjetoPG::ObjetoPG(juegoPG* jueg, juegoPG::Texturas_t texturas, int px, int py) 
+ObjetoPG::ObjetoPG(juegoPG* jueg, Texturas_t texturas, int px, int py) 
 {	
 	juego = jueg;
 	texturasa = texturas;

@@ -7,7 +7,7 @@ class ObjetoPG : public ObjetoJuego
 public:
 
 	ObjetoPG();
-	ObjetoPG(juegoPG* jueg, juegoPG::Texturas_t texturas, int px, int py);
+	ObjetoPG(juegoPG* jueg, Texturas_t texturas, int px, int py);
 	virtual ~ObjetoPG();
 
 	virtual void draw();
@@ -20,6 +20,6 @@ protected:
 	// sustituye al puntero a la textura y al renderizador de la clase Globo
 	juegoPG* juego;
 	SDL_Rect rectObjeto;
-	juegoPG::Texturas_t texturasa;
+	Texturas_t texturasa;
 };
 

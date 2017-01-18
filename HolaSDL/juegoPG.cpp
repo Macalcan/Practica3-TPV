@@ -113,37 +113,27 @@ void juegoPG::freeObjetos() {
 //en caso de que el globo lo sea se dibuja con draw(pRenderer), pRenderer está declarado arriba pero no asginado
 void juegoPG::render() const {
 
-	SDL_RenderClear(game->getRender()); //"limpia" el render donde vamos a dibujar el siguiente frame
+	SDL_RenderClear(pRenderer); //"limpia" el render donde vamos a dibujar el siguiente frame
 
 	SDL_Rect rect; //rect para el fondo
 	rect = { 0, 0, ancho, alto };
-	texturas[TFondo]->draw(game->getRender(), rect); //dibuja el fondo
+	texturas[TFondo]->draw(pRenderer, rect); //dibuja el fondo
 
-	for (int i = 0; i < objetos.size(); i++) { //dibuja los globos
-		objetos[i]->draw();
-	}
+	//topSate()->draw();
 
 	//Show the window
-	SDL_RenderPresent(game->getRender());
+	SDL_RenderPresent(pRenderer);
 }
 //--------------------------------------------------------------------------------//
 //comprueba si al hacer click ha explotado el globo a traves del metodo onClick de GlobosPG y si lo ha explotado saca los puntos del globo y los suma
 //a los puntos conseguidos en total
 void juegoPG::onClick(){
-	bool click = false;
-	
-	for (int i = objetos.size() - 1; i >= 0 && (!click); i--){
-		if (objetos[i]->onClick()){
-			click = true;
-		}
-	}
+	topState()->onClick();
 }
 //--------------------------------------------------------------------------------//
 //recorre todos los globos actualizandolos y comprobando si se han desinflado o explotado, y por lo tanto no son visibles
 void juegoPG::update() {
-	for (int i = 0; i < objetos.size(); i++) {
-		objetos[i]->update(); //si se ha exlpotado el globo se determina en nuestro array de booleanos y desciende el numero de globos
-	}
+	topState()->update();
 }
 //--------------------------------------------------------------------------------//
 void juegoPG::handle_event() {
@@ -171,6 +161,7 @@ void juegoPG::handle_event() {
 //--------------------------------------------------------------------------------//
 void juegoPG::run()
 {
+	//pushState(new PlayPG(this);
 	if (!error){
 		Uint32 MSxUpdate = 500;
 		cout << "Play \n";
@@ -208,12 +199,7 @@ void juegoPG::run()
 
 }
 
-void juegoPG::newPuntos(ObjetoJuego* po) {
-	if (dynamic_cast<GlobosPG*>(po))
-		puntos += dynamic_cast<GlobosPG*>(po)->getPuntos();
-	else if (typeid(*po) == typeid(PremioPG))
-		puntos += dynamic_cast<PremioPG*>(po)->getPuntos();
-}
+
 
 int juegoPG::getPuntos() {
 	return puntos;

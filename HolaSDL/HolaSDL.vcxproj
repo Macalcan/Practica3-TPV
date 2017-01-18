@@ -70,6 +70,7 @@
     <ClCompile Include="BotonPG.cpp" />
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="EstadoPG.cpp" />
+    <ClCompile Include="GameOverPG.cpp" />
     <ClCompile Include="GloboA.cpp" />
     <ClCompile Include="GlobosPG.cpp" />
     <ClCompile Include="juegoPG.cpp" />
@@ -86,6 +87,7 @@
     <ClInclude Include="Error.h" />
     <ClInclude Include="EstadoJuego.h" />
     <ClInclude Include="EstadoPG.h" />
+    <ClInclude Include="GameOverPG.h" />
     <ClInclude Include="GloboA.h" />
     <ClInclude Include="GlobosPG.h" />
     <ClInclude Include="juegoPG.h" />

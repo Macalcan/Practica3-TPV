@@ -7,6 +7,7 @@
 #include "GloboA.h"
 #include "ObjetoPG.h"
 #include "Error.h"
+#include "GameOverPG.h"
 
 PlayPG::PlayPG(juegoPG* ju) : EstadoPG(ju)
 {
@@ -45,6 +46,9 @@ void PlayPG::newBaja(ObjetoJuego* po) {
 	//queremos saber si lo que destruimos es un globo
 	if (dynamic_cast<GlobosPG*>(po)) {
 		numG--;
+		if (numG == 0){
+			game->stateChange(new GameOverPG(game));
+		}
 	}
 	else if (typeid(*po) == typeid(PremioPG)) {
 		dynamic_cast<PremioPG*>(po)->visible = false;
@@ -69,8 +73,13 @@ void PlayPG::newPremio() {
 	}
 
 }
+void PlayPG::update() {
+	for (int i = 0; i < objetos.size(); i++) {
+		objetos[i]->update(); //si se ha exlpotado el globo se determina en nuestro array de booleanos y desciende el numero de globos
+	}
+}
 void PlayPG::draw(){
-	SDL_RenderClear(game->getRender()); //"limpia" el render donde vamos a dibujar el siguiente frame
+	//SDL_RenderClear(game->getRender()); //"limpia" el render donde vamos a dibujar el siguiente frame
 
 	SDL_Rect rect; //rect para el fondo
 	rect = { 0, 0, ancho, alto };
@@ -81,7 +90,7 @@ void PlayPG::draw(){
 	}
 
 	//Show the window
-	SDL_RenderPresent(game->getRender());
+	//SDL_RenderPresent(game->getRender());
 }
 PlayPG::~PlayPG()
 {

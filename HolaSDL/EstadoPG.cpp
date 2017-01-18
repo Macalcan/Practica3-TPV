@@ -17,13 +17,10 @@ bool EstadoPG::onClick(){
 			click = true;
 		}
 	}
+	return click;
 }
 
-void EstadoPG::update(){
-	for (int i = 0; i < objetos.size(); i++) {
-		objetos[i]->update(); //si se ha exlpotado el globo se determina en nuestro array de booleanos y desciende el numero de globos
-	}
-}
+
 
 void EstadoPG::draw() {
 	for (int i = 0; i < objetos.size(); i++) {
