@@ -53,7 +53,7 @@ bool MariposaPG::onClick() {
 		rectObjeto.y = rand() % 450;
 		if (contClicks == 3) {
 			if (dynamic_cast<PlayPG*>(juego->topState())) {
-				dynamic_cast<PlayPG*>(juego->topState())->newPremio(this);
+				dynamic_cast<PlayPG*>(juego->topState())->newPremio();
 			}
 			contClicks = 0; //contador a 0 para volver a contar los clicks para un nuevo premio
 		}

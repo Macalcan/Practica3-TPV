@@ -8,6 +8,8 @@ class MenuPG : public EstadoPG
 public:
 	MenuPG(juegoPG* juego);
 	BotonPG* boton;
+protected:
+	void initObjetos();
 	static void salir(juegoPG* jug) { jug -> setSalir(); }
 	static void jugar(juegoPG* jug) { jug->stateChange(new PlayPG(jug)); }
 	~MenuPG();

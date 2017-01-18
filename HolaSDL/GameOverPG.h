@@ -10,7 +10,8 @@ public:
 	GameOverPG(juegoPG* ju);
 	~GameOverPG();
 protected:
-	static void showScore(juegoPG* jug) { int puntos = jug->getPuntos(); }
+	void initObjetos();
+	static void showScore(juegoPG* jug) { int puntos = 59; } //REVISAR
 	static void menu(juegoPG* jug) { jug->stateChange(new MenuPG(jug)); }
 	
 };

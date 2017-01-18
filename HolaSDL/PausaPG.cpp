@@ -6,13 +6,13 @@ PausaPG::PausaPG(juegoPG* juego) : EstadoPG(juego)
 {
 	int x = 450 / 2;
 	int y = 450 / 2;
-
-	objetos.emplace_back(new BotonPG(game, menu, TMenu, x, y));
-	objetos.emplace_back(new BotonPG(game, jugar, TResume, x, y + 100));
-
+	initObjetos();
 }
 
-
+void PausaPG::initObjetos(){
+	objetos.emplace_back(new BotonPG(juego, menu, TMenu, x, y));
+	objetos.emplace_back(new BotonPG(juego, jugar, TResume, x, y + 100));
+}
 PausaPG::~PausaPG()
 {
 	delete objetos[0];

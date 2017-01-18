@@ -12,6 +12,7 @@ public:
 
 	virtual void draw();
 	virtual bool onClick();
+	virtual void update(){};
 	bool visible;
 	bool dentro(int x, int y) const; //llamara a posMouse de juegoPG
 

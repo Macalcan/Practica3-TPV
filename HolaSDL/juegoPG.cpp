@@ -11,6 +11,7 @@
 #include "GloboA.h"
 #include "ObjetoPG.h"
 #include "Error.h"
+#include "MenuPG.h"
 using namespace std;
 
 juegoPG::juegoPG()
@@ -24,7 +25,7 @@ juegoPG::juegoPG()
 	exit = false; //si se sale del juego se pondrá a true
 	gameOver = false; //si se acaba el juego se pondrá a true
 	pausa = false; //se se pulsa p es true y se para la actualizacion de los globos
-	puntos = 0; //puntos al comenzar el juego
+	
 	//Error errorM("No se carga SDL");
 	if(!initSDL())
 		throw Error("SDL no se inicia");
@@ -35,7 +36,11 @@ juegoPG::juegoPG()
 	rutasText.emplace_back("..\\bmps\\globoM.png");
 	rutasText.emplace_back("..\\bmps\\butterfly.png");
 	rutasText.emplace_back("..\\bmps\\Gift.png");
-	
+	rutasText.emplace_back("..\\bmps\\TPlay.png");
+	rutasText.emplace_back("..\\bmps\\TMenu.png");
+	rutasText.emplace_back("..\\bmps\\TExit.png");
+	rutasText.emplace_back("..\\bmps\\TScore.png");
+	rutasText.emplace_back("..\\bmps\\TResume.png");
 	initTexturas();
 }
 //--------------------------------------------------------------------------------//
@@ -68,7 +73,7 @@ bool juegoPG::initSDL() {
 }
 //--------------------------------------------------------------------------------//
 void juegoPG::initTexturas() {
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < numText; i++) {
 		texturas.emplace_back(new TexturasSDL());
 		texturas[i]->load(pRenderer, rutasText[i]);
 	}
@@ -90,11 +95,8 @@ void juegoPG::closeSDL() {
 	SDL_Quit();
 }
 //--------------------------------------------------------------------------------//
-void juegoPG::freeObjetos() {
-	for (int i = 0; i < objetos.size(); i++) {
-		delete objetos[i];
-		objetos[i] = nullptr;
-	}
+void juegoPG::freeTexturas() {
+	
 	//delete de las rutas de codigo
 	delete (texturas[TGloboN]);
 	texturas[TGloboN] = nullptr;
@@ -109,17 +111,21 @@ void juegoPG::freeObjetos() {
 	//destruye las texturas de los globos
 }
 //--------------------------------------------------------------------------------//
+EstadoJuego* juegoPG::topState() {
+	return estados.top();
+}
+
 //dibuja los globos que estan visibles, para ello deberia hacer probablemente un for recorriendo todos los globos y accediendo a su atributo visible,
 //en caso de que el globo lo sea se dibuja con draw(pRenderer), pRenderer está declarado arriba pero no asginado
 void juegoPG::render() const {
 
 	SDL_RenderClear(pRenderer); //"limpia" el render donde vamos a dibujar el siguiente frame
 
-	SDL_Rect rect; //rect para el fondo
+	/*SDL_Rect rect; //rect para el fondo
 	rect = { 0, 0, ancho, alto };
-	texturas[TFondo]->draw(pRenderer, rect); //dibuja el fondo
+	texturas[TFondo]->draw(pRenderer, rect); //dibuja el fondo*/
 
-	//topSate()->draw();
+	topState()->draw(); 
 
 	//Show the window
 	SDL_RenderPresent(pRenderer);
@@ -161,7 +167,7 @@ void juegoPG::handle_event() {
 //--------------------------------------------------------------------------------//
 void juegoPG::run()
 {
-	//pushState(new PlayPG(this);
+	pushState(new MenuPG(this));
 	if (!error){
 		Uint32 MSxUpdate = 500;
 		cout << "Play \n";
@@ -169,8 +175,8 @@ void juegoPG::run()
 		string puntuacion = "preparado!!?? ";
 		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "Practica1", puntuacion.c_str(), nullptr);
 		
-		render();
-		handle_event();
+		//render();
+		//handle_event();
 		while (!exit && !gameOver){
 			if (SDL_GetTicks() - lastUpdate >= MSxUpdate){//while(elapsed >= MSxUpdate)
 				if (!pausa)
@@ -181,18 +187,18 @@ void juegoPG::run()
 
 			render();
 			handle_event();
-			if (numG == 0) { // Cuando el juego acaba aparece una ventana con la puntuacion que hemos conseguido y con un boton OK que cuando se pulsa se cierran las consolas
+			/*if (numG == 0) { // Cuando el juego acaba aparece una ventana con la puntuacion que hemos conseguido y con un boton OK que cuando se pulsa se cierran las consolas
 				string puntuacion = "Puntuacion: ";
 				puntuacion += to_string(puntos);
 				SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "Has terminado!!", puntuacion.c_str(), nullptr);
 				gameOver = true;
-			}
+			}*/
 		}
 
 		render();
-		if (exit) cout << "Exit \n";
+		/*if (exit) cout << "Exit \n";
 		else cout << "Has obtenido " << puntos << " puntos \n";
-		SDL_Delay(1000);
+		SDL_Delay(1000);*/
 	}
 
 
@@ -201,9 +207,7 @@ void juegoPG::run()
 
 
 
-int juegoPG::getPuntos() {
-	return puntos;
-}
+
 //--------------------------------------------------------------------------------//
 void juegoPG::getMousePos(int &mpx, int &mpy) const {
 	//hay que añadir atributos para la posicion del raton (debe actualizarse en onClick)
@@ -230,13 +234,11 @@ void juegoPG::stateChange(EstadoJuego* estado){
 	pushState(estado);
 }
 
-EstadoJuego* juegoPG::topState() {
-	return estados.top();
-}
+
 juegoPG::~juegoPG()
 {
 	closeSDL();
-	freeObjetos();
+	freeTexturas();
 	pWindow = nullptr;
 	pRenderer = nullptr;
 }

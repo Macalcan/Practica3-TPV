@@ -1,3 +1,5 @@
+#ifndef _H_PlayPG_H_
+#define _H_PlayPG_H_
 #pragma once
 #include "EstadoPG.h"
 class PlayPG : public EstadoPG
@@ -9,16 +11,14 @@ public:
 	void newPuntos(ObjetoJuego * po);
 	void newPremio();
 	int puntos;
+
 protected:
-	bool initObjetos();
+	void initObjetos();
 	virtual void draw();
 	virtual void update();
 	int numMariposas;
 	int numPremios;
-	//bool error, gameOver, exit;
-	//SDL_Window* pWindow;
-	//SDL_Renderer* pRenderer;
-	//bool pausa; //para pausar la actualizacion de los globos
+	int dim = 10;
 	bool gameOver;
 	int numG; //numero de globos
 	//std::vector<TexturasSDL*> texturas;
@@ -27,6 +27,4 @@ protected:
 	int y; //para las posiciones del raton
 	int mx, my;
 };
-
-
-
+#endif

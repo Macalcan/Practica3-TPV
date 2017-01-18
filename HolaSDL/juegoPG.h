@@ -10,7 +10,7 @@
 
 const int ancho = 550; //dimensiones de la ventana del juego
 const int alto = 600;
-const int numText = 4;
+const int numText = 10;
 enum Texturas_t { TFondo, TGloboN, TGloboM, Tmariposa, Tpremio, TPlay, TMenu, TExit, TScore, TResume };
 
 class juegoPG
@@ -31,15 +31,15 @@ public:
 	void stateChange(EstadoJuego* estado);
 	EstadoJuego* topState(); //diapositiva 39
 	~juegoPG();
-	int getPuntos();
+	
 private:
 	
 	int dim = 10; //10; //dimension del array de los globos
 	void initTexturas();
+	void freeTexturas();
 	bool initSDL();
 	void closeSDL();
-	bool initObjetos();
-	void freeObjetos();
+	
 	void render() const;
 	void onClick();
 	void update();
@@ -47,15 +47,12 @@ private:
 
 	std::vector<std::string> rutasText;	
 	stack <EstadoJuego*> estados;
-	int puntos;
-	int numMariposas;
-	int numPremios;
 	bool error, gameOver, exit;
 	SDL_Window* pWindow;
 	SDL_Renderer* pRenderer;
 	bool pausa; //para pausar la actualizacion de los globos
 	vector <ObjetoJuego*> objetos; //array de los objetos
-	int numG; //numero de globos
+	//int numG; //numero de globos
 	std::vector<TexturasSDL*> texturas;
 	int x; //para las posiciones del raton
 	int y; //para las posiciones del raton

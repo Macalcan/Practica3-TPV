@@ -6,14 +6,15 @@
 
 MenuPG::MenuPG(juegoPG* juego) : EstadoPG(juego)
 {
-
-	int x = 450 / 2;
-	int y = 450 / 2;
-	objetos.emplace_back(new BotonPG(game, salir(game), TExit, x, y));
-	objetos.emplace_back(new BotonPG(game, jugar(game), TPlay, x, y + 100));
+	 x = 450 / 2;
+	 y = 450 / 2 + 100;
+	initObjetos();
 }
 
-
+void MenuPG::initObjetos(){
+	objetos.emplace_back(new BotonPG(juego, TExit, x, y, salir(juego)));
+	objetos.emplace_back(new BotonPG(juego, TPlay, x, y, jugar(juego)));
+}
 MenuPG::~MenuPG()
 {
 	delete objetos[0];
