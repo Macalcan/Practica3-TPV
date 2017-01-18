@@ -45,9 +45,6 @@
     <ClCompile Include="MenuPG.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="Error.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
     <ClCompile Include="PlayPg.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>

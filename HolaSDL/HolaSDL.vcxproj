@@ -68,7 +68,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BotonPG.cpp" />
-    <ClCompile Include="Error.cpp" />
     <ClCompile Include="EstadoPG.cpp" />
     <ClCompile Include="GameOverPG.cpp" />
     <ClCompile Include="GloboA.cpp" />
