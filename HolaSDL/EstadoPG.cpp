@@ -12,7 +12,7 @@ EstadoPG::EstadoPG(juegoPG* ju)
 
 bool EstadoPG::onClick(){
 	bool click = false;
-	for (int i = objetos.size() - 1; i >= 0 && (!click); i--){
+	for (size_t i = objetos.size() - 1; i >= 0 && (!click); i--){
 		if (objetos[i]->onClick()){
 			click = true;
 		}
