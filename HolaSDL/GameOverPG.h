@@ -11,7 +11,8 @@ class GameOverPG : public EstadoPG
 public:
 	GameOverPG(juegoPG* ju, int p);
 	~GameOverPG();
-protected:
+	
+private:
 	static int puntos;
 	void initObjetos();
 	static void showScore(juegoPG* jug) {

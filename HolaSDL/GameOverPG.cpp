@@ -2,7 +2,7 @@
 #include "juegoPG.h"
 #include "BotonPG.h"
 
-static int puntos = 0;
+int GameOverPG::puntos = 0;
 
 GameOverPG::GameOverPG(juegoPG* ju, int p) : EstadoPG(ju)
 {

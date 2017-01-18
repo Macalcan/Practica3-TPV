@@ -78,6 +78,7 @@
     <ClCompile Include="MariposaPG.cpp" />
     <ClCompile Include="MenuPG.cpp" />
     <ClCompile Include="ObjetoPG.cpp" />
+    <ClCompile Include="PausaPG.cpp" />
     <ClCompile Include="PlayPg.cpp" />
     <ClCompile Include="PremioPG.cpp" />
     <ClCompile Include="TexturasSDL.cpp" />
@@ -95,6 +96,7 @@
     <ClInclude Include="MenuPG.h" />
     <ClInclude Include="ObjetoJuego.h" />
     <ClInclude Include="ObjetoPG.h" />
+    <ClInclude Include="PausaPG.h" />
     <ClInclude Include="PlayPg.h" />
     <ClInclude Include="PremioPG.h" />
     <ClInclude Include="TexturasSDL.h" />

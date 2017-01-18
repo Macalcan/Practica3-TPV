@@ -12,6 +12,7 @@
 #include "ObjetoPG.h"
 #include "Error.h"
 #include "MenuPG.h"
+#include "PausaPG.h"
 using namespace std;
 
 juegoPG::juegoPG()
@@ -166,10 +167,11 @@ void juegoPG::handle_event() {
 		}
 		else if (e.type == SDL_KEYUP){ //si se pulsa una tecla comprueba que es p
 			if (e.key.keysym.sym == SDLK_p){
-				if (!pausa) //si pausa es false se activa y sino se desactiva
-					pausa = true;
-				else
-					pausa = false;
+				pausa = !pausa;
+			}
+			else if (e.key.keysym.sym == SDLK_ESCAPE && dynamic_cast<PlayPG*>(topState()))
+			{
+				pushState(new PausaPG(this));
 			}
 		}
 	}
@@ -197,18 +199,10 @@ void juegoPG::run()
 
 			render();
 			handle_event();
-			/*if (numG == 0) { // Cuando el juego acaba aparece una ventana con la puntuacion que hemos conseguido y con un boton OK que cuando se pulsa se cierran las consolas
-				string puntuacion = "Puntuacion: ";
-				puntuacion += to_string(puntos);
-				SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "Has terminado!!", puntuacion.c_str(), nullptr);
-				gameOver = true;
-			}*/
 		}
 
 		render();
-		/*if (exit) cout << "Exit \n";
-		else cout << "Has obtenido " << puntos << " puntos \n";
-		SDL_Delay(1000);*/
+		
 	}
 
 

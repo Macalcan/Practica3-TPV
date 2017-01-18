@@ -11,7 +11,7 @@ public:
 protected:
 	void initObjetos();
 	BotonPG* boton;
-	static void menu(juegoPG* jug) { jug->stateChange(new MenuPG(jug); }
+	static void menu(juegoPG* jug) { jug->stateChange(new MenuPG(jug)); }
 	static void jugar(juegoPG* jug) { jug->popState(); }
 	
 };
