@@ -31,7 +31,7 @@ public:
 	void stateChange(EstadoJuego* estado);
 	EstadoJuego* topState(); //diapositiva 39
 	~juegoPG();
-	
+	std::vector<TexturasSDL*> texturas;
 private:
 	
 	int dim = 10; //10; //dimension del array de los globos
@@ -53,7 +53,7 @@ private:
 	bool pausa; //para pausar la actualizacion de los globos
 	vector <ObjetoJuego*> objetos; //array de los objetos
 	//int numG; //numero de globos
-	std::vector<TexturasSDL*> texturas;
+	
 	int x; //para las posiciones del raton
 	int y; //para las posiciones del raton
 	int mx, my;

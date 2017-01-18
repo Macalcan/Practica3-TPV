@@ -1,4 +1,4 @@
-
+#include "TexturasSDL.h"
 #include "PlayPG.h"
 #include "PremioPG.h"
 #include "MariposaPG.h"
@@ -80,10 +80,10 @@ void PlayPG::update() {
 void PlayPG::draw(){
 	//SDL_RenderClear(game->getRender()); //"limpia" el render donde vamos a dibujar el siguiente frame
 
-	/*SDL_Rect rect; //rect para el fondo
+	SDL_Rect rect; //rect para el fondo
 	rect = { 0, 0, ancho, alto };
-	texturas[TFondo]->draw(juego->getRender(), rect); //dibuja el fondo
-	*/
+	juego->texturas[TFondo]->draw(juego->getRender(), rect); //dibuja el fondo
+	
 	for (int i = 0; i < objetos.size(); i++) { //dibuja los globos
 		objetos[i]->draw();
 	}

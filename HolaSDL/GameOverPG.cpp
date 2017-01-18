@@ -14,7 +14,7 @@ void GameOverPG::initObjetos(){
 	y = 450 / 2;
 	objetos.emplace_back(new BotonPG(juego, TMenu, x, y, menu));
 	x = 450 / 2;
-	y = 450 / 2 + 100;
+	y = 450 / 2 + 150;
 	objetos.emplace_back(new BotonPG(juego, TScore, x, y, showScore));
 	
 }

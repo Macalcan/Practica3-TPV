@@ -24,8 +24,8 @@ bool GlobosPG::onClick(){
 		visible = false;
 		explotado = true;
 		if (dynamic_cast<PlayPG*>(juego->topState())) {
-			dynamic_cast<PlayPG*>(juego->topState())->newBaja(this);
 			dynamic_cast<PlayPG*>(juego->topState())->newPuntos(this);
+			dynamic_cast<PlayPG*>(juego->topState())->newBaja(this);
 		}
 		return true;
 	}
