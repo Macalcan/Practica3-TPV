@@ -1,5 +1,5 @@
-#ifndef _H_PlayPG_H
-#define _H_PlayPG_H
+#ifndef _H_PlayPG_H_
+#define _H_PlayPG_H_
 #include "PlayPG.h"
 #include "PremioPG.h"
 #include "MariposaPG.h"
@@ -10,19 +10,13 @@
 
 PlayPG::PlayPG(juegoPG* ju) : EstadoPG(ju)
 {
+	initObjetos();
 }
 
 bool juegoPG::initObjetos() {
 	//declaras variables aleatorias x e y que indican la posicion de cada globo
 	int x;
 	int y;
-
-	//juegoPG se encarga de las te
-	/*for (int i = 0; i < 5; i++) {
-		texturas.emplace_back(new TexturasSDL());
-		texturas[i]->load(pRenderer, rutasText[i]);
-	}*/
-
 
 	for (int i = 0; i < dim; i++){//creamos un globo en cada vuelta en una posicion aleatoria en el rectangulo de la ventana
 		x = rand() % 450;
@@ -44,6 +38,7 @@ bool juegoPG::initObjetos() {
 		objetos.emplace_back(new PremioPG(this, Tpremio, x, y));
 	}
 
+	//throw error
 	return (texturas[TGloboN] != nullptr || texturas[Tmariposa] != nullptr || texturas[Tpremio] != nullptr);
 }
 void PlayPG::newBaja(ObjetoJuego* po) {
@@ -74,7 +69,20 @@ void PlayPG::newPremio() {
 	}
 
 }
+void PlayPG::draw(){
+	SDL_RenderClear(game->getRender()); //"limpia" el render donde vamos a dibujar el siguiente frame
 
+	SDL_Rect rect; //rect para el fondo
+	rect = { 0, 0, ancho, alto };
+	texturas[TFondo]->draw(game->getRender(), rect); //dibuja el fondo
+
+	for (int i = 0; i < objetos.size(); i++) { //dibuja los globos
+		objetos[i]->draw();
+	}
+
+	//Show the window
+	SDL_RenderPresent(game->getRender());
+}
 PlayPG::~PlayPG()
 {
 }

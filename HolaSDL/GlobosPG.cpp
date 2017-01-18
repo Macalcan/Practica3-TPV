@@ -2,7 +2,7 @@
 #ifndef _H_GlobosPG_H
 #define _H_GlobosPG_H
 #include "GlobosPG.h"
-
+#include "PlayPG.h"
 using namespace std;
 
 
@@ -23,8 +23,10 @@ bool GlobosPG::onClick(){
 	if (ObjetoPG::onClick() && !explotado){
 		visible = false;
 		explotado = true;
-		juego->newBaja(this);
-		juego->newPuntos(this);
+		if (dynamic_cast<PlayPG*>(juego->topState())) {
+			dynamic_cast<PlayPG*>(juego->topState())->newBaja(this);
+			dynamic_cast<PlayPG*>(juego->topState())->newPuntos(this);
+		}
 		return true;
 	}
 	else return false;
@@ -35,10 +37,10 @@ bool GlobosPG::onClick(){
 void GlobosPG::update(){
 	//si se ha deshinchado o se ha explotado el globo ya no sera visible 
 	if (!explotado){
-		if (inflado <= 0){
+		if (inflado <= 0 && dynamic_cast<PlayPG*>(juego->topState())){
 			explotado = true;
 			visible = false;
-			juego->newBaja(this);
+			dynamic_cast<PlayPG*>(juego->topState())->newBaja(this);
 		}
 		else {
 			if (rand() % 100 < PVIS) //probabilidad de que sea visible o no

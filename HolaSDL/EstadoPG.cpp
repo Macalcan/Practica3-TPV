@@ -25,6 +25,12 @@ void EstadoPG::update(){
 	}
 }
 
+void EstadoPG::draw() {
+	for (int i = 0; i < objetos.size(); i++) {
+		objetos[i]->draw();
+	}
+}
+
 EstadoPG::~EstadoPG()
 {
 }

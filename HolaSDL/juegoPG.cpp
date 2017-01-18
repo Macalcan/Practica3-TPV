@@ -36,7 +36,7 @@ juegoPG::juegoPG()
 	rutasText.emplace_back("..\\bmps\\butterfly.png");
 	rutasText.emplace_back("..\\bmps\\Gift.png");
 	
-	initObjetos();
+	initTexturas();
 }
 //--------------------------------------------------------------------------------//
 bool juegoPG::initSDL() {
@@ -67,45 +67,17 @@ bool juegoPG::initSDL() {
 	return carga;
 }
 //--------------------------------------------------------------------------------//
-
-SDL_Renderer* juegoPG::getRender() const {
-	return pRenderer;
-}
-//--------------------------------------------------------------------------------//
-bool juegoPG::initObjetos() {
-	//declaras variables aleatorias x e y que indican la posicion de cada globo
-	int x;
-	int y;
-
-	//inicializa las texturas de los globos
+void juegoPG::initTexturas() {
 	for (int i = 0; i < 5; i++) {
 		texturas.emplace_back(new TexturasSDL());
 		texturas[i]->load(pRenderer, rutasText[i]);
 	}
-	
-
-	for (int i = 0; i < dim; i++){//creamos un globo en cada vuelta en una posicion aleatoria en el rectangulo de la ventana
-		x = rand() % 450;
-		y = rand() % 450;
-		if (i%2 == 0)
-			objetos.emplace_back( new GlobosPG(this, TGloboN, x, y)); //cada globo tendrá la textura 0 o la textura 1
-		else
-			objetos.emplace_back(new GloboA(this, TGloboM, x, y));
-	}
-	numPremios = numMariposas = 2;
-	for (int i = dim; i < numMariposas + dim; i++){
-		x = rand() % 450;
-		y = rand() % 450;
-		objetos.emplace_back(new MariposaPG(this, Tmariposa, x, y));
-	}
-	numG = dim; //numero total de globos al principio del juego
-	
-	for (int i = dim + numMariposas; i < numPremios + numMariposas + dim; i++){
-		objetos.emplace_back(new PremioPG(this, Tpremio, x, y));
-	}
-	
-	return (texturas[TGloboN] != nullptr || texturas[Tmariposa] != nullptr || texturas[Tpremio] != nullptr);
 }
+SDL_Renderer* juegoPG::getRender() const {
+	return pRenderer;
+}
+//--------------------------------------------------------------------------------//
+
 
 //--------------------------------------------------------------------------------//
 void juegoPG::closeSDL() {
@@ -141,26 +113,25 @@ void juegoPG::freeObjetos() {
 //en caso de que el globo lo sea se dibuja con draw(pRenderer), pRenderer está declarado arriba pero no asginado
 void juegoPG::render() const {
 
-	SDL_RenderClear(pRenderer); //"limpia" el render donde vamos a dibujar el siguiente frame
-	
-	SDL_Rect rect; //rect para el fondo
-	rect = {0, 0, ancho, alto};
-	texturas[TFondo]->draw(pRenderer, rect); //dibuja el fondo
+	SDL_RenderClear(game->getRender()); //"limpia" el render donde vamos a dibujar el siguiente frame
 
-	for (int i = 0; i < objetos.size(); i++){ //dibuja los globos
+	SDL_Rect rect; //rect para el fondo
+	rect = { 0, 0, ancho, alto };
+	texturas[TFondo]->draw(game->getRender(), rect); //dibuja el fondo
+
+	for (int i = 0; i < objetos.size(); i++) { //dibuja los globos
 		objetos[i]->draw();
 	}
 
 	//Show the window
-	SDL_RenderPresent(pRenderer);
+	SDL_RenderPresent(game->getRender());
 }
 //--------------------------------------------------------------------------------//
 //comprueba si al hacer click ha explotado el globo a traves del metodo onClick de GlobosPG y si lo ha explotado saca los puntos del globo y los suma
 //a los puntos conseguidos en total
 void juegoPG::onClick(){
 	bool click = false;
-	//cout << objetos.size();
-	//int size = 11;
+	
 	for (int i = objetos.size() - 1; i >= 0 && (!click); i--){
 		if (objetos[i]->onClick()){
 			click = true;
@@ -236,6 +207,17 @@ void juegoPG::run()
 
 
 }
+
+void juegoPG::newPuntos(ObjetoJuego* po) {
+	if (dynamic_cast<GlobosPG*>(po))
+		puntos += dynamic_cast<GlobosPG*>(po)->getPuntos();
+	else if (typeid(*po) == typeid(PremioPG))
+		puntos += dynamic_cast<PremioPG*>(po)->getPuntos();
+}
+
+int juegoPG::getPuntos() {
+	return puntos;
+}
 //--------------------------------------------------------------------------------//
 void juegoPG::getMousePos(int &mpx, int &mpy) const {
 	//hay que añadir atributos para la posicion del raton (debe actualizarse en onClick)
@@ -243,36 +225,28 @@ void juegoPG::getMousePos(int &mpx, int &mpy) const {
 	mpy = my;
 }
 //--------------------------------------------------------------------------------//
-void juegoPG::newBaja(ObjetoJuego* po) {
-	//queremos saber si lo que destruimos es un globo
-	if (dynamic_cast<GlobosPG*>(po)) {
-		numG--;
-	}
-	else if (typeid(*po) == typeid(PremioPG)) {
-		dynamic_cast<PremioPG*>(po)->visible = false;
-	}
+void juegoPG::setSalir(){
+	popState();
+	exit = true;
 }
-//--------------------------------------------------------------------------------//
-void juegoPG::newPuntos(ObjetoJuego* po) {
-	if (dynamic_cast<GlobosPG*>(po))
-		puntos += dynamic_cast<GlobosPG*>(po)->getPuntos();
-	else if (typeid(*po) == typeid(PremioPG))
-		puntos += dynamic_cast<PremioPG*>(po)->getPuntos();
-}
-//--------------------------------------------------------------------------------//
-void juegoPG::newPremio() {
-	bool premioNuevo = false;
-	for (int i = objetos.size() - 1; i > objetos.size() - numPremios -1 && !(premioNuevo); i--){
-		if (!(dynamic_cast<PremioPG*>(objetos[i])->visible))
-		{
-			dynamic_cast<PremioPG*>(objetos[i])->visible = true;
-			premioNuevo = true;
-		}
-	}
 
-}
 //--------------------------------------------------------------------------------//
+void juegoPG::pushState(EstadoJuego* estado){
+	estados.push(estado);
+}
+void juegoPG::popState() {
+	delete topState();
+	estados.pop();
+}
 
+void juegoPG::stateChange(EstadoJuego* estado){
+	popState();
+	pushState(estado);
+}
+
+EstadoJuego* juegoPG::topState() {
+	return estados.top();
+}
 juegoPG::~juegoPG()
 {
 	closeSDL();

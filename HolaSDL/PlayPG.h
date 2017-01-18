@@ -8,10 +8,11 @@ public:
 	void newBaja(ObjetoJuego* po);
 	void newPuntos(ObjetoJuego * po);
 	void newPremio();
+	int puntos;
 protected:
 	bool initObjetos();
-
-	int puntos;
+	virtual void draw();
+	
 	int numMariposas;
 	int numPremios;
 	//bool error, gameOver, exit;

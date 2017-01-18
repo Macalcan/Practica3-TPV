@@ -1,12 +1,15 @@
 #pragma once
 #include "EstadoPG.h"
 #include "juegoPG.h"
+#include "BotonPG.h"
+#include "PlayPg.h"
 class MenuPG : public EstadoPG
 {
 public:
-	MenuPG();
-	//using CallBack_t = void (juegoPG*);
-	//void callback_T();
+	MenuPG(juegoPG* juego);
+	BotonPG* boton;
+	static void salir(juegoPG* jug) { jug -> setSalir(); }
+	static void jugar(juegoPG* jug) { jug->stateChange(new PlayPG(jug)); }
 	~MenuPG();
 };
 

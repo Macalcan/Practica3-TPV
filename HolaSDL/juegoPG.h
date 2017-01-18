@@ -2,8 +2,10 @@
 #include "SDL.h"
 #include "TexturasSDL.h"
 #include "ObjetoJuego.h"
+#include "EstadoJuego.h"
 // Practica realizada por Blanca Macazaga Zuazo y Adrián Alcántara Delgado
 #include <vector>
+#include <stack>
 
 
 const int ancho = 550; //dimensiones de la ventana del juego
@@ -18,19 +20,22 @@ public:
 	void run();
 	void getMousePos(int &mpx, int &mpy)const;
 	// los new van a necesitar hacer casting de clase dynamic_cast
-	void newBaja(ObjetoJuego* po);
-	void newPuntos(ObjetoJuego * po);
-	void newPremio();
+	
 	
 	enum Texturas_t { TFondo, TGloboN, TGloboM, Tmariposa, Tpremio };
 	SDL_Renderer* getRender()const;
 	TexturasSDL* getTextura(Texturas_t et) const { return texturas[et]; } //metodo inline
-	
+	void setSalir();
+	void popState(); //diapositiva 37
+	void pushState(EstadoJuego* estado); //diapositiva 37
+	void stateChange(EstadoJuego* estado);
+	EstadoJuego* topState(); //diapositiva 39
 	~juegoPG();
-
+	int getPuntos();
 private:
+	void newPuntos(ObjetoJuego * po);
 	int dim = 10; //10; //dimension del array de los globos
-
+	void initTexturas();
 	bool initSDL();
 	void closeSDL();
 	bool initObjetos();
@@ -41,7 +46,7 @@ private:
 	void handle_event();
 
 	std::vector<std::string> rutasText;	
-	
+	stack <EstadoJuego*> estados;
 	int puntos;
 	int numMariposas;
 	int numPremios;
