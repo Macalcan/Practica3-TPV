@@ -70,7 +70,7 @@ bool juegoPG::initSDL() {
 		}
 	}
 
-	return false;//carga;
+	return carga;
 }
 //--------------------------------------------------------------------------------//
 void juegoPG::initTexturas() {

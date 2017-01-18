@@ -17,8 +17,7 @@ int main(int argc, char* args[]) {  // SDL require esta cabecera
 		game.run(); //llamada al metodo run para que comience el juego
 	}
 	catch (Error & e){
-		e.Mensaje();
-
+		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "ERROR", e.Mensaje().c_str(), nullptr);
 	}
 
 	return 0;
