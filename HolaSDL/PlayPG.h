@@ -3,24 +3,29 @@
 class PlayPG : public EstadoPG
 {
 public:
-	PlayPG();
+	PlayPG(juegoPG* ju);
 	~PlayPG();
-
+	void newBaja(ObjetoJuego* po);
+	void newPuntos(ObjetoJuego * po);
+	void newPremio();
 protected:
-	bool onClick();
+	bool initObjetos();
 
 	int puntos;
 	int numMariposas;
 	int numPremios;
-	bool error, gameOver, exit;
-	SDL_Window* pWindow;
-	SDL_Renderer* pRenderer;
-	bool pausa; //para pausar la actualizacion de los globos
-	vector <ObjetoJuego*> objetos; //array de los objetos
+	//bool error, gameOver, exit;
+	//SDL_Window* pWindow;
+	//SDL_Renderer* pRenderer;
+	//bool pausa; //para pausar la actualizacion de los globos
+	bool gameOver;
 	int numG; //numero de globos
-	std::vector<TexturasSDL*> texturas;
+	//std::vector<TexturasSDL*> texturas;
+
 	int x; //para las posiciones del raton
 	int y; //para las posiciones del raton
 	int mx, my;
 };
+
+
 

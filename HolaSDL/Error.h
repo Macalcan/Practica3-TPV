@@ -8,8 +8,9 @@ protected:
 	
 public:
 	//Error();
-	Error(string const &message) : errorM(message){ errorM = message; };
+	Error(string const &message) { errorM = message; };
 	const string& mensaje() const { return errorM; };
 	~Error();
 };
+
 

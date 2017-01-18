@@ -25,9 +25,9 @@ juegoPG::juegoPG()
 	gameOver = false; //si se acaba el juego se pondrá a true
 	pausa = false; //se se pulsa p es true y se para la actualizacion de los globos
 	puntos = 0; //puntos al comenzar el juego
-	Error errorM("No se carga SDL");
+	//Error errorM("No se carga SDL");
 	if(!initSDL())
-		throw errorM;
+		throw Error("SDL no se inicia");
 
 	//metemos las rutas de texturas
 	rutasText.emplace_back("..\\bmps\\sky.jpg");

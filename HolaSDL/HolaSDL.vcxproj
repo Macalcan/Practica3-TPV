@@ -67,6 +67,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BotonPG.cpp" />
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="EstadoPG.cpp" />
     <ClCompile Include="GloboA.cpp" />
@@ -76,10 +77,12 @@
     <ClCompile Include="MariposaPG.cpp" />
     <ClCompile Include="MenuPG.cpp" />
     <ClCompile Include="ObjetoPG.cpp" />
+    <ClCompile Include="PlayPg.cpp" />
     <ClCompile Include="PremioPG.cpp" />
     <ClCompile Include="TexturasSDL.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BotonPG.h" />
     <ClInclude Include="Error.h" />
     <ClInclude Include="EstadoJuego.h" />
     <ClInclude Include="EstadoPG.h" />
@@ -90,6 +93,7 @@
     <ClInclude Include="MenuPG.h" />
     <ClInclude Include="ObjetoJuego.h" />
     <ClInclude Include="ObjetoPG.h" />
+    <ClInclude Include="PlayPg.h" />
     <ClInclude Include="PremioPG.h" />
     <ClInclude Include="TexturasSDL.h" />
   </ItemGroup>

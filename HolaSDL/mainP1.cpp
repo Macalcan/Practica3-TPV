@@ -11,13 +11,14 @@ int main(int argc, char* args[]) {  // SDL require esta cabecera
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Check Memory Leaks
 
 	
-	juegoPG game; //variable de tipo juegoPG para empezar el juego
+	
 	try{
+		juegoPG game; //variable de tipo juegoPG para empezar el juego
 		game.run(); //llamada al metodo run para que comience el juego
 	}
 	catch (Error & e){
-		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "Error", e.mensaje().c_str(), nullptr);
-		
+		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Error", e.mensaje().c_str(), nullptr);
+
 	}
 
 	return 0;
