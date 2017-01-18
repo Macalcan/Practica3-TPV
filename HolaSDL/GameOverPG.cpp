@@ -5,14 +5,16 @@
 
 GameOverPG::GameOverPG(juegoPG* ju) : EstadoPG(ju)
 {
-	x = 450 / 2;
-	y = 450 / 2 + 100;
-	
-	
+	initObjetos();
 }
 void GameOverPG::initObjetos(){
-	objetos.emplace_back(new BotonPG(juego, TScore, x, y, showScore));
+	x = 450 / 2;
+	y = 450 / 2;
 	objetos.emplace_back(new BotonPG(juego, TMenu, x, y, menu));
+	x = 450 / 2;
+	y = 450 / 2 + 100;
+	objetos.emplace_back(new BotonPG(juego, TScore, x, y, showScore));
+	
 }
 
 GameOverPG::~GameOverPG()

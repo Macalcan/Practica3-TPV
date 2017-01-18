@@ -110,14 +110,14 @@ void juegoPG::freeTexturas() {
 	texturas[Tpremio] = nullptr;
 	delete (texturas[TPlay]);
 	texturas[TPlay] = nullptr;
-	/*delete (texturas[]);
-	texturas[] = nullptr;
-	delete (texturas[]);
-	texturas[] = nullptr;
-	delete (texturas[]);
-	texturas[] = nullptr;
-	delete (texturas[]);
-	texturas[] = nullptr;*/
+	delete (texturas[TMenu]);
+	texturas[TMenu] = nullptr;
+	delete (texturas[TExit]);
+	texturas[TExit] = nullptr;
+	delete (texturas[TScore]);
+	texturas[TScore] = nullptr;
+	delete (texturas[TResume]);
+	texturas[TResume] = nullptr;
 	//destruye las texturas de los globos
 }
 //--------------------------------------------------------------------------------//
@@ -226,7 +226,6 @@ void juegoPG::getMousePos(int &mpx, int &mpy) const {
 }
 //--------------------------------------------------------------------------------//
 void juegoPG::setSalir(){
-	popState();
 	exit = true;
 }
 
