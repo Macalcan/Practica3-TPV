@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include "SDL_image.h"
+#include "Error.h"
 using namespace std;
 
 TexturasSDL::TexturasSDL()
@@ -21,7 +22,8 @@ bool TexturasSDL::load(SDL_Renderer* pRenderer, string const& nombArch)
 
 	if (pTempSurface == nullptr)
 	{
-		cout << "Imposible cargar el archivo" << nombArch << "! \nSDL Error: " << SDL_GetError() << "\n";
+		//cout << "Imposible cargar el archivo" << nombArch << "! \nSDL Error: " << SDL_GetError() << "\n";
+		throw errorTextura("No se puede cargar la textura");
 		carga = false;
 	}
 	else

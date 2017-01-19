@@ -29,7 +29,7 @@ juegoPG::juegoPG()
 	
 	//Error errorM("No se carga SDL");
 	if(!initSDL())
-		throw errorTextura("SDL no se inicia");
+		throw errorSDL("SDL no se inicia");
 
 	//metemos las rutas de texturas
 	rutasText.emplace_back("..\\bmps\\sky.jpg");
