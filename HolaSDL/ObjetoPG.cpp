@@ -1,5 +1,4 @@
-#ifndef _H_ObjetoPG_H
-#define _H_ObjetoPG_H
+
 #include "ObjetoPG.h"
 
 
@@ -37,4 +36,4 @@ ObjetoPG::~ObjetoPG()
 {
 }
 
-#endif
+

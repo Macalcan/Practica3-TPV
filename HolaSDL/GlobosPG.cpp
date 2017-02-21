@@ -1,6 +1,5 @@
 // Practica realizada por Blanca Macazaga Zuazo y Adrián Alcántara Delgado
-#ifndef _H_GlobosPG_H
-#define _H_GlobosPG_H
+
 #include "GlobosPG.h"
 #include "PlayPG.h"
 using namespace std;
@@ -70,4 +69,4 @@ GlobosPG::~GlobosPG()
 {
 
 }
-#endif
+

@@ -1,3 +1,5 @@
+#ifndef _H_PremioPG_H
+#define _H_PremioPG_H
 #pragma once
 
 #include "SDL.h"
@@ -23,4 +25,4 @@ private:
 	int puntos;
 	int intento;
 };
-
+#endif

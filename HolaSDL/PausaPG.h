@@ -1,3 +1,5 @@
+#ifndef _H_PausaPG_H
+#define _H_PausaPG_H
 #pragma once
 #include "EstadoPG.h"
 #include "juegoPG.h"
@@ -15,4 +17,5 @@ protected:
 	static void jugar(juegoPG* jug) { jug->popState(); }
 	
 };
+#endif
 

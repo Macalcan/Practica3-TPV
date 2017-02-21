@@ -1,5 +1,4 @@
-#ifndef _H_MariposaPG_H
-#define _H_MariposaPG_H
+
 #include "MariposaPG.h"
 #include <iostream>
 #include "PlayPG.h"
@@ -67,4 +66,3 @@ bool MariposaPG::onClick() {
 MariposaPG::~MariposaPG()
 {
 }
-#endif

@@ -42,6 +42,7 @@ juegoPG::juegoPG()
 	rutasText.emplace_back("..\\bmps\\TExit.png");
 	rutasText.emplace_back("..\\bmps\\TScore.png");
 	rutasText.emplace_back("..\\bmps\\TResume.png");
+	rutasText.emplace_back("..\\bmps\\Pelota.png");
 	initTexturas();
 }
 //--------------------------------------------------------------------------------//
@@ -119,6 +120,8 @@ void juegoPG::freeTexturas() {
 	texturas[TScore] = nullptr;
 	delete (texturas[TResume]);
 	texturas[TResume] = nullptr;
+	delete (texturas[TPelota]);
+	texturas[TPelota] = nullptr;
 	//destruye las texturas de los globos
 }
 //--------------------------------------------------------------------------------//
@@ -132,9 +135,7 @@ void juegoPG::render() {
 
 	SDL_RenderClear(pRenderer); //"limpia" el render donde vamos a dibujar el siguiente frame
 
-	/*SDL_Rect rect; //rect para el fondo
-	rect = { 0, 0, ancho, alto };
-	texturas[TFondo]->draw(pRenderer, rect); //dibuja el fondo*/
+	
 
 	topState()->draw(); 
 
@@ -239,6 +240,7 @@ void juegoPG::stateChange(EstadoJuego* estado){
 juegoPG::~juegoPG()
 {
 	closeSDL();
+	popState();
 	freeTexturas();
 	pWindow = nullptr;
 	pRenderer = nullptr;

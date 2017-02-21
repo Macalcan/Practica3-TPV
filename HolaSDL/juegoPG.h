@@ -1,4 +1,7 @@
+#ifndef _H_juegoPG_H_
+#define _H_juegoPG_H_
 #pragma once
+
 #include "SDL.h"
 #include "TexturasSDL.h"
 #include "ObjetoJuego.h"
@@ -10,8 +13,8 @@
 
 const int ancho = 550; //dimensiones de la ventana del juego
 const int alto = 600;
-const int numText = 10;
-enum Texturas_t { TFondo, TGloboN, TGloboM, Tmariposa, Tpremio, TPlay, TMenu, TExit, TScore, TResume };
+const int numText = 11;
+enum Texturas_t { TFondo, TGloboN, TGloboM, Tmariposa, Tpremio, TPlay, TMenu, TExit, TScore, TResume, TPelota };
 
 class juegoPG
 {
@@ -21,8 +24,6 @@ public:
 	void getMousePos(int &mpx, int &mpy)const;
 	// los new van a necesitar hacer casting de clase dynamic_cast
 
-	
-	
 	SDL_Renderer* getRender()const;
 	TexturasSDL* getTextura(Texturas_t et) const { return texturas[et]; } //metodo inline
 	void setSalir();
@@ -60,3 +61,4 @@ private:
 	
 };
 
+#endif

@@ -1,3 +1,5 @@
+#ifndef _H_MenuPG_H
+#define _H_MenuPG_H
 #pragma once
 #include "EstadoPG.h"
 #include "juegoPG.h"
@@ -14,4 +16,4 @@ protected:
 	static void jugar(juegoPG* jug) { jug->stateChange(new PlayPG(jug)); }
 	~MenuPG();
 };
-
+#endif

@@ -1,4 +1,6 @@
 // Practica realizada por Blanca Macazaga Zuazo y Adrián Alcántara Delgado
+#ifndef _H_GlobosPG_H
+#define _H_GlobosPG_H
 #pragma once
 
 #include "SDL.h"
@@ -26,4 +28,4 @@ protected:
 private:
 	static const int PVIS = 70;
 };
-
+#endif

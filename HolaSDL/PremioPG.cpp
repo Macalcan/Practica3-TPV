@@ -1,5 +1,3 @@
-#ifndef _H_PremioPG_H
-#define _H_PremioPG_H
 #include "PremioPG.h"
 #include "PlayPG.h"
 PremioPG::PremioPG(juegoPG* jueg, Texturas_t texturas, int px, int py) : ObjetoPG(jueg, texturas, px, py)
@@ -59,4 +57,3 @@ void PremioPG::reiniciaPremio() {
 PremioPG::~PremioPG()
 {
 }
-#endif

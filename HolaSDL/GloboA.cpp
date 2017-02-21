@@ -1,6 +1,4 @@
 // Practica realizada por Blanca Macazaga Zuazo y Adrián Alcántara Delgado
-#ifndef _H_GloboA_H
-#define _H_GloboA_H
 #include "GloboA.h"
 #include "PlayPG.h"
 using namespace std;
@@ -8,12 +6,7 @@ using namespace std;
 
 GloboA::GloboA(juegoPG* jueg, Texturas_t texturas, int &px, int &py) :GlobosPG(jueg, texturas, px, py)
 {
-	//visible = true;
-	/*visible = true;
-	puntos = 0;
-	explotado = false;
-	inflado = 100;
-	rectObjeto.h = rectObjeto.w = 100^*/
+	
 }
 
 
@@ -60,4 +53,4 @@ GloboA::~GloboA()
 {
 
 }
-#endif
+

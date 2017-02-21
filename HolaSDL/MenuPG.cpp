@@ -1,5 +1,4 @@
-#ifndef _H_MenuPG_H
-#define _H_MenuPG_H
+
 
 #include "MenuPG.h"
 #include "BotonPG.h"
@@ -25,4 +24,4 @@ MenuPG::~MenuPG()
 	delete objetos[1];
 	objetos[1] = nullptr;
 }
-#endif
+

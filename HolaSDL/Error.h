@@ -1,6 +1,3 @@
-#pragma once
-#include <string>
-using namespace std;
 #ifndef ERROR_H
 #define ERROR_H
 #include <string>

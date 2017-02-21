@@ -1,3 +1,5 @@
+#ifndef _H_ObjetoPG_H
+#define _H_ObjetoPG_H
 #pragma once
 #include "ObjetoJuego.h"
 #include "juegoPG.h"
@@ -23,4 +25,4 @@ protected:
 	SDL_Rect rectObjeto;
 	Texturas_t texturasa;
 };
-
+#endif

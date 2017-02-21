@@ -1,3 +1,5 @@
+#ifndef _H_GloboA_H
+#define _H_GloboA_H
 #pragma once
 
 #include "SDL.h"
@@ -15,5 +17,6 @@ private:
 
 
 };
+#endif
 
 

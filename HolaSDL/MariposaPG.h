@@ -1,3 +1,5 @@
+#ifndef _H_MariposaPG_H
+#define _H_MariposaPG_H
 #pragma once
 
 #include "SDL.h"
@@ -21,4 +23,5 @@ private:
 	
 	int posx, posy;
 };
+#endif
 

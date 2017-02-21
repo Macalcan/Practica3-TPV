@@ -10,13 +10,11 @@ public:
 	void newBaja(ObjetoJuego* po);
 	void newPuntos(ObjetoJuego * po);
 	void newPremio();
-
-
 protected:
 	int puntos;
 	void initObjetos();
 	virtual void draw();
-	virtual void update();
+	
 	int numMariposas;
 	int numPremios;
 	int dim = 10;
