@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _H_ObjetoJuego_H_
+#define _H_ObjetoJuego_H_
 class ObjetoJuego
 {
 public:
@@ -17,4 +18,4 @@ public:
 	{
 	}
 };
-
+#endif

@@ -5,6 +5,9 @@ class Vago //: public ObjetoPG
 {
 public:
 	Vago();
+	/*virtual void draw(){}
+	virtual void update(){}
+	virtual bool onClick();*/
 	~Vago();
 };
 

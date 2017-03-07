@@ -13,31 +13,29 @@
 
 PlayPG::PlayPG(juegoPG* ju) : EstadoPG(ju)
 {
-	
-	initObjetos();
+	initObjetos(factory);
 }
 
-void PlayPG::initObjetos() {
-	//declaras variables aleatorias x e y que indican la posicion de cada globo
-
+void PlayPG::initObjetos(GameElementFactoryV* factory) {
+	
 	for (int i = 0; i < dim; i++){//creamos un globo en cada vuelta en una posicion aleatoria en el rectangulo de la ventana
-		x = rand() % 450;
-		y = rand() % 450;
+		/*x = rand() % 450;
+		y = rand() % 450;*/
 		if (i % 2 == 0)
-			objetos.emplace_back(new GlobosPG(juego, TGloboN, x, y)); //cada globo tendrá la textura 0 o la textura 1
+			objetos.emplace_back(factory->createNormalElement('g', juego));//new GlobosPG(juego, TGloboN, x, y)); //cada globo tendrá la textura 0 o la textura 1
 		else
-			objetos.emplace_back(new GloboA(juego, TGloboM, x, y));
+			objetos.emplace_back(factory->createNormalElement('a', juego));//new GloboA(juego, TGloboM, x, y));
 	}
 	numPremios = numMariposas = 2;
 	for (int i = dim; i < numMariposas + dim; i++){
 		x = rand() % 450;
 		y = rand() % 450;
-		objetos.emplace_back(new MariposaPG(juego, Tmariposa, x, y));
+		objetos.emplace_back(factory->createSpecialElement('g', juego));
 	}
 	numG = dim; //numero total de globos al principio del juego
 
 	for (int i = dim + numMariposas; i < numPremios + numMariposas + dim; i++){
-		objetos.emplace_back(new PremioPG(juego, Tpremio, x, y));
+		objetos.emplace_back(factory->createPrizeElement('g', juego));
 	}
 
 	//QUITAR

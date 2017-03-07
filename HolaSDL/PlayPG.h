@@ -1,7 +1,8 @@
 #ifndef _H_PlayPG_H_
 #define _H_PlayPG_H_
-#pragma once
+#include "GameElementFactoryV.h"
 #include "EstadoPG.h"
+
 class PlayPG : public EstadoPG
 {
 public:
@@ -12,9 +13,10 @@ public:
 	void newPremio();
 protected:
 	int puntos;
-	void initObjetos();
+	void initObjetos(GameElementFactoryV* factory);
 	virtual void draw();
 	
+	GameElementFactoryV* factory;//Game factory
 	int numMariposas;
 	int numPremios;
 	int dim = 10;
