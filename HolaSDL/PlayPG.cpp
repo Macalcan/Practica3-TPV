@@ -7,12 +7,14 @@
 #include "ObjetoPG.h"
 #include "Error.h"
 #include "GameOverPG.h"
+#include "GameFactory.h"
 
 //QUITAR
 #include "BouncingBall.h"
 
 PlayPG::PlayPG(juegoPG* ju) : EstadoPG(ju)
 {
+	factory = new GameFactory('g', juego);
 	initObjetos(factory);
 }
 
@@ -22,24 +24,24 @@ void PlayPG::initObjetos(GameElementFactoryV* factory) {
 		/*x = rand() % 450;
 		y = rand() % 450;*/
 		if (i % 2 == 0)
-			objetos.emplace_back(factory->createNormalElement('g', juego));//new GlobosPG(juego, TGloboN, x, y)); //cada globo tendrá la textura 0 o la textura 1
+			objetos.emplace_back(factory->createNormalElement(i));//new GlobosPG(juego, TGloboN, x, y)); //cada globo tendrá la textura 0 o la textura 1
 		else
-			objetos.emplace_back(factory->createNormalElement('a', juego));//new GloboA(juego, TGloboM, x, y));
+			objetos.emplace_back(factory->createNormalElement(i));//new GloboA(juego, TGloboM, x, y));
 	}
 	numPremios = numMariposas = 2;
 	for (int i = dim; i < numMariposas + dim; i++){
 		x = rand() % 450;
 		y = rand() % 450;
-		objetos.emplace_back(factory->createSpecialElement('g', juego));
+		objetos.emplace_back(factory->createSpecialElement());
 	}
 	numG = dim; //numero total de globos al principio del juego
 
 	for (int i = dim + numMariposas; i < numPremios + numMariposas + dim; i++){
-		objetos.emplace_back(factory->createPrizeElement('g', juego));
+		objetos.emplace_back(factory->createPrizeElement());
 	}
 
 	//QUITAR
-	objetos.emplace_back(new BouncingBall(juego, TPelota, 200, 200));
+	//objetos.emplace_back(new BouncingBall(juego, TPelota, 200, 200));
 	//throw error
 	
 }

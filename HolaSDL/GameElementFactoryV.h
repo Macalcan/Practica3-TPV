@@ -10,9 +10,9 @@ public:
 	{
 	}
 
-	virtual ObjetoJuego* createNormalElement(char type, juegoPG* juego) = 0;
-	virtual ObjetoJuego* createSpecialElement(char type, juegoPG* juego) = 0;
-	virtual ObjetoJuego* createPrizeElement(char type, juegoPG* juego) = 0;
+	virtual ObjetoJuego* createNormalElement(int i) = 0;
+	virtual ObjetoJuego* createSpecialElement() = 0;
+	virtual ObjetoJuego* createPrizeElement() = 0;
 
 	virtual ~GameElementFactoryV()
 	{

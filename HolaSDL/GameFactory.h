@@ -4,14 +4,16 @@
 class GameFactory : public GameElementFactoryV
 {
 public:
-	GameFactory();
-	ObjetoJuego* createNormalElement(char type, juegoPG* juego);
-	ObjetoJuego* createSpecialElement(char type, juegoPG* juego);
-	ObjetoJuego* createPrizeElement(char type, juegoPG* juego);
+	GameFactory(char types, juegoPG* juego);
+	ObjetoJuego* createNormalElement(int i);
+	ObjetoJuego* createSpecialElement();
+	ObjetoJuego* createPrizeElement();
 
 protected:
 	int x;
 	int y;
+	char type;
+	juegoPG* ju;
 	~GameFactory();
 };
 #endif

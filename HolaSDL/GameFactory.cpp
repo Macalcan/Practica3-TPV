@@ -6,39 +6,41 @@
 #include "Vago.h"
 #include "GloboA.h"
 
-GameFactory::GameFactory()
+GameFactory::GameFactory(char types, juegoPG* juego)
 {
+	type = types;
+	ju = juego;
 }
 
-ObjetoJuego* GameFactory::createNormalElement(char type, juegoPG* juego){
+ObjetoJuego* GameFactory::createNormalElement(int i){
 	x = rand() % 450;
 	y = rand() % 450;
-	if (type == 'g')
-		return new GlobosPG(juego, TGloboN, x, y);
-	else if (type == 'a')
+	if (i % 2 == 0)
+		return new GlobosPG(ju, TGloboN, x, y);
+	else 
+		return new GloboA(ju, TGloboM, x, y);
+	/*else if (type == 'a')
 		return new GloboA(juego, TGloboM, x, y);
 	else 
-		return new BouncingBall(juego, TPelota, x, y);
+		return new BouncingBall(juego, TPelota, x, y);*/
 }
 
-ObjetoJuego* GameFactory::createSpecialElement (char type, juegoPG* juego){
+ObjetoJuego* GameFactory::createSpecialElement (){
 	x = rand() % 450;
 	y = rand() % 450;
-	if (type == 'g')
-		return new  MariposaPG(juego, Tmariposa, x, y);
-	else
-		return nullptr;
+	
+	return new  MariposaPG(ju, Tmariposa, x, y);
+	
 	/*else if(type == 'v')
 		return new Vago();*/
 }
 
-ObjetoJuego* GameFactory::createPrizeElement(char type, juegoPG* juego){
+ObjetoJuego* GameFactory::createPrizeElement(){
 	x = rand() % 450;
 	y = rand() % 450;
-	if (type == 'g')
-		return new PremioPG(juego, Tpremio, x, y);
-	else
-		return nullptr;
+	
+	return new PremioPG(ju, Tpremio, x, y);
+	
 	/*else if (type == 'v')
 		return new Vago();*/
 }
