@@ -71,6 +71,7 @@
     <ClCompile Include="BouncingBall.cpp" />
     <ClCompile Include="EstadoPG.cpp" />
     <ClCompile Include="GameFactory.cpp" />
+    <ClCompile Include="Gamefactory2.cpp" />
     <ClCompile Include="GameOverPG.cpp" />
     <ClCompile Include="GloboA.cpp" />
     <ClCompile Include="GlobosPG.cpp" />
@@ -93,6 +94,7 @@
     <ClInclude Include="EstadoPG.h" />
     <ClInclude Include="GameElementFactoryV.h" />
     <ClInclude Include="GameFactory.h" />
+    <ClInclude Include="Gamefactory2.h" />
     <ClInclude Include="GameOverPG.h" />
     <ClInclude Include="GloboA.h" />
     <ClInclude Include="GlobosPG.h" />

@@ -8,13 +8,14 @@
 #include "Error.h"
 #include "GameOverPG.h"
 #include "GameFactory.h"
+#include "Gamefactory2.h"
 
 //QUITAR
 #include "BouncingBall.h"
 
 PlayPG::PlayPG(juegoPG* ju) : EstadoPG(ju)
 {
-	factory = new GameFactory('g', juego);
+	factory = new Gamefactory2('p', juego);
 	initObjetos(factory);
 }
 
@@ -47,7 +48,7 @@ void PlayPG::initObjetos(GameElementFactoryV* factory) {
 }
 void PlayPG::newBaja(ObjetoJuego* po) {
 	//queremos saber si lo que destruimos es un globo
-	if (dynamic_cast<GlobosPG*>(po)) {
+	if (dynamic_cast<GlobosPG*>(po) || dynamic_cast<BouncingBall*>(po)) {
 		numG--;
 		if (numG == 0){
 			juego->stateChange(new GameOverPG(juego, puntos));
