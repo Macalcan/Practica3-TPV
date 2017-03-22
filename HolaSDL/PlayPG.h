@@ -6,14 +6,14 @@
 class PlayPG : public EstadoPG
 {
 public:
-	PlayPG(juegoPG* ju);
+	PlayPG(juegoPG* ju, GameElementFactoryV* fac);
 	~PlayPG();
 	void newBaja(ObjetoJuego* po);
 	void newPuntos(ObjetoJuego * po);
 	void newPremio();
 protected:
 	int puntos;
-	void initObjetos(GameElementFactoryV* factory);
+	void initObjetos();
 	virtual void draw();
 	
 	GameElementFactoryV* factory;//Game factory

@@ -1,10 +1,11 @@
 #ifndef _H_GameFactory_H_
 #define _H_GameFactory_H_
 #include "GameElementFactoryV.h"
+#include "juegoPG.h"
 class GameFactory : public GameElementFactoryV
 {
 public:
-	GameFactory(char types, juegoPG* juego);
+	GameFactory(juegoPG* juego);
 	ObjetoJuego* createNormalElement(int i);
 	ObjetoJuego* createSpecialElement();
 	ObjetoJuego* createPrizeElement();

@@ -13,13 +13,13 @@
 //QUITAR
 #include "BouncingBall.h"
 
-PlayPG::PlayPG(juegoPG* ju) : EstadoPG(ju)
+PlayPG::PlayPG(juegoPG* ju, GameElementFactoryV* fac) : EstadoPG(ju)
 {
-	factory = new Gamefactory2('p', juego);
-	initObjetos(factory);
+	factory = fac;
+	initObjetos();
 }
 
-void PlayPG::initObjetos(GameElementFactoryV* factory) {
+void PlayPG::initObjetos() {
 	
 	for (int i = 0; i < dim; i++){//creamos un globo en cada vuelta en una posicion aleatoria en el rectangulo de la ventana
 		/*x = rand() % 450;

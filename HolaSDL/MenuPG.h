@@ -13,7 +13,7 @@ public:
 protected:
 	void initObjetos();
 	static void salir(juegoPG* jug) { jug -> setSalir(); }
-	static void jugar(juegoPG* jug) { jug->stateChange(new PlayPG(jug)); }
+	static void jugar(juegoPG* jug) { jug->stateChange(new PlayPG(jug, jug->getFactoria())); }
 	~MenuPG();
 };
 #endif

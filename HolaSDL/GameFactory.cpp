@@ -6,9 +6,8 @@
 #include "Vago.h"
 #include "GloboA.h"
 
-GameFactory::GameFactory(char types, juegoPG* juego)
+GameFactory::GameFactory(juegoPG* juego)
 {
-	type = types;
 	ju = juego;
 }
 

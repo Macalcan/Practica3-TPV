@@ -13,6 +13,8 @@
 #include "Error.h"
 #include "MenuPG.h"
 #include "PausaPG.h"
+#include "GameFactory.h"
+#include "Gamefactory2.h"
 using namespace std;
 
 juegoPG::juegoPG()
@@ -44,6 +46,11 @@ juegoPG::juegoPG()
 	rutasText.emplace_back("..\\bmps\\TResume.png");
 	rutasText.emplace_back("..\\bmps\\Pelota.png");
 	initTexturas();
+	
+	//factorias
+	factorias.emplace_back(new GameFactory(this));
+	factorias.emplace_back(new Gamefactory2(this));
+	factory = factorias[0];
 }
 //--------------------------------------------------------------------------------//
 bool juegoPG::initSDL() {
@@ -85,6 +92,9 @@ SDL_Renderer* juegoPG::getRender() const {
 }
 //--------------------------------------------------------------------------------//
 
+void juegoPG::setFactoria(Factorias_F fac){
+	factory = factorias[fac];
+}
 
 //--------------------------------------------------------------------------------//
 void juegoPG::closeSDL() {

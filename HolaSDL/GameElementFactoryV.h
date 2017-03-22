@@ -1,7 +1,7 @@
 #ifndef _H_GameElementFactoryV_H_
 #define _H_GameElementFactoryV_H_
 #include "ObjetoJuego.h"
-#include "juegoPG.h"
+
 class GameElementFactoryV
 {
 public:

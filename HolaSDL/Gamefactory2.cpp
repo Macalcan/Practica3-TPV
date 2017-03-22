@@ -2,9 +2,8 @@
 #include "BouncingBall.h"
 #include "Vago.h"
 
-Gamefactory2::Gamefactory2(char types, juegoPG* juego)
+Gamefactory2::Gamefactory2(juegoPG* juego)
 {
-	type = types;
 	ju = juego;
 }
 
