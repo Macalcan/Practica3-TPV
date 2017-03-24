@@ -87,6 +87,9 @@
     <ClCompile Include="GameOverPG.cpp">
       <Filter>Archivos de código fuente\Estados</Filter>
     </ClCompile>
+    <ClCompile Include="Configuracion.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="juegoPG.h">
@@ -151,6 +154,9 @@
     </ClInclude>
     <ClInclude Include="Gamefactory2.h">
       <Filter>Archivos de encabezado\Factorias</Filter>
+    </ClInclude>
+    <ClInclude Include="Configuracion.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

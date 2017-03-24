@@ -16,6 +16,9 @@ void MenuPG::initObjetos(){
 	x = 450 / 2;
 	y = 450 / 2 + 150;
 	objetos.emplace_back(new BotonPG(juego, TExit, x, y, salir));
+	x = 450 / 2;
+	y = 450 / 2 + 250;
+	objetos.emplace_back(new BotonPG(juego, TExit, x, y, config));
 }
 MenuPG::~MenuPG()
 {
@@ -23,5 +26,7 @@ MenuPG::~MenuPG()
 	objetos[0] = nullptr;
 	delete objetos[1];
 	objetos[1] = nullptr;
+	delete objetos[2];
+	objetos[2] = nullptr;
 }
 

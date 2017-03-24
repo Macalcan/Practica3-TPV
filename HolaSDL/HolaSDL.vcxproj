@@ -69,6 +69,7 @@
   <ItemGroup>
     <ClCompile Include="BotonPG.cpp" />
     <ClCompile Include="BouncingBall.cpp" />
+    <ClCompile Include="Configuracion.cpp" />
     <ClCompile Include="EstadoPG.cpp" />
     <ClCompile Include="GameFactory.cpp" />
     <ClCompile Include="Gamefactory2.cpp" />
@@ -89,6 +90,7 @@
   <ItemGroup>
     <ClInclude Include="BotonPG.h" />
     <ClInclude Include="BouncingBall.h" />
+    <ClInclude Include="Configuracion.h" />
     <ClInclude Include="Error.h" />
     <ClInclude Include="EstadoJuego.h" />
     <ClInclude Include="EstadoPG.h" />

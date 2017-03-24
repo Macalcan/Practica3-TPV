@@ -1,55 +1,30 @@
-﻿Compilación iniciada a las 23/03/2017 0:48:24.
+﻿Compilación iniciada a las 24/03/2017 15:00:37.
      1>Proyecto "C:\Users\Blanca\Documents\Universidad\Segundo\TPV\Practica4-TPV\Practica3-TPV\HolaSDL\HolaSDL.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt BotonPG.cpp BouncingBall.cpp EstadoPG.cpp GameFactory.cpp GameOverPG.cpp Gamefactory2.cpp GloboA.cpp GlobosPG.cpp MariposaPG.cpp MenuPG.cpp ObjetoPG.cpp PausaPG.cpp PlayPg.cpp PremioPG.cpp Vago.cpp juegoPG.cpp mainP1.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Configuracion.cpp GameOverPG.cpp MenuPG.cpp PausaPG.cpp PlayPg.cpp juegoPG.cpp
          juegoPG.cpp
+     1>c:\users\blanca\documents\universidad\segundo\tpv\practica4-tpv\practica3-tpv\holasdl\configuracion.h(17): error C2061: error de sintaxis : identificador 'MenuPG'
+     1>c:\users\blanca\documents\universidad\segundo\tpv\practica4-tpv\practica3-tpv\holasdl\configuracion.h(18): error C2061: error de sintaxis : identificador 'MenuPG'
          PlayPg.cpp
+     1>c:\users\blanca\documents\universidad\segundo\tpv\practica4-tpv\practica3-tpv\holasdl\configuracion.h(17): error C2061: error de sintaxis : identificador 'MenuPG'
+     1>c:\users\blanca\documents\universidad\segundo\tpv\practica4-tpv\practica3-tpv\holasdl\configuracion.h(18): error C2061: error de sintaxis : identificador 'MenuPG'
      1>c:\users\blanca\documents\universidad\segundo\tpv\practica4-tpv\practica3-tpv\holasdl\playpg.cpp(74): warning C4018: '>' : no coinciden signed/unsigned
      1>c:\users\blanca\documents\universidad\segundo\tpv\practica4-tpv\practica3-tpv\holasdl\playpg.cpp(91): warning C4018: '<' : no coinciden signed/unsigned
      1>c:\users\blanca\documents\universidad\segundo\tpv\practica4-tpv\practica3-tpv\holasdl\playpg.cpp(98): warning C4018: '<' : no coinciden signed/unsigned
-         Gamefactory2.cpp
-         GameFactory.cpp
-         Generando código...
-         Compilando...
-         mainP1.cpp
-         Vago.cpp
-         PremioPG.cpp
          PausaPG.cpp
-         ObjetoPG.cpp
+     1>c:\users\blanca\documents\universidad\segundo\tpv\practica4-tpv\practica3-tpv\holasdl\configuracion.h(17): error C2061: error de sintaxis : identificador 'MenuPG'
+     1>c:\users\blanca\documents\universidad\segundo\tpv\practica4-tpv\practica3-tpv\holasdl\configuracion.h(18): error C2061: error de sintaxis : identificador 'MenuPG'
          MenuPG.cpp
-         MariposaPG.cpp
-         GlobosPG.cpp
-         GloboA.cpp
+     1>c:\users\blanca\documents\universidad\segundo\tpv\practica4-tpv\practica3-tpv\holasdl\configuracion.h(17): error C2061: error de sintaxis : identificador 'MenuPG'
+     1>c:\users\blanca\documents\universidad\segundo\tpv\practica4-tpv\practica3-tpv\holasdl\configuracion.h(18): error C2061: error de sintaxis : identificador 'MenuPG'
          GameOverPG.cpp
-         EstadoPG.cpp
-     1>c:\users\blanca\documents\universidad\segundo\tpv\practica4-tpv\practica3-tpv\holasdl\estadopg.cpp(24): warning C4018: '<' : no coinciden signed/unsigned
-     1>c:\users\blanca\documents\universidad\segundo\tpv\practica4-tpv\practica3-tpv\holasdl\estadopg.cpp(30): warning C4018: '<' : no coinciden signed/unsigned
-         BouncingBall.cpp
-         BotonPG.cpp
+     1>c:\users\blanca\documents\universidad\segundo\tpv\practica4-tpv\practica3-tpv\holasdl\configuracion.h(17): error C2061: error de sintaxis : identificador 'MenuPG'
+     1>c:\users\blanca\documents\universidad\segundo\tpv\practica4-tpv\practica3-tpv\holasdl\configuracion.h(18): error C2061: error de sintaxis : identificador 'MenuPG'
+         Configuracion.cpp
+     1>c:\users\blanca\documents\universidad\segundo\tpv\practica4-tpv\practica3-tpv\holasdl\menupg.h(18): error C2061: error de sintaxis : identificador 'Configuracion'
          Generando código...
-     1>c:\users\blanca\documents\universidad\segundo\tpv\practica4-tpv\practica3-tpv\holasdl\premiopg.cpp(43): warning C4715: 'PremioPG::onClick' : no todas las rutas de acceso de control devuelven un valor
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Blanca\Documents\Universidad\Segundo\TPV\Practica4-TPV\Practica3-TPV\bin\HolaSDLDebug.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Blanca\Documents\Universidad\Segundo\TPV\Practica4-TPV\Practica3-TPV\bin\HolaSDLDebug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Blanca\Documents\Universidad\Segundo\TPV\Practica4-TPV\Practica3-TPV\bin\HolaSDLDebug.lib" /MACHINE:X86 Debug\BotonPG.obj
-         Debug\BouncingBall.obj
-         Debug\EstadoPG.obj
-         Debug\GameFactory.obj
-         Debug\Gamefactory2.obj
-         Debug\GameOverPG.obj
-         Debug\GloboA.obj
-         Debug\GlobosPG.obj
-         Debug\juegoPG.obj
-         Debug\mainP1.obj
-         Debug\MariposaPG.obj
-         Debug\MenuPG.obj
-         Debug\ObjetoPG.obj
-         Debug\PausaPG.obj
-         Debug\PlayPg.obj
-         Debug\PremioPG.obj
-         Debug\TexturasSDL.obj
-         Debug\Vago.obj
-         HolaSDL.vcxproj -> C:\Users\Blanca\Documents\Universidad\Segundo\TPV\Practica4-TPV\Practica3-TPV\bin\HolaSDLDebug.exe
-     1>Compilación del proyecto terminada "C:\Users\Blanca\Documents\Universidad\Segundo\TPV\Practica4-TPV\Practica3-TPV\HolaSDL\HolaSDL.vcxproj" (Build destinos).
+     1>Compilación del proyecto terminada "C:\Users\Blanca\Documents\Universidad\Segundo\TPV\Practica4-TPV\Practica3-TPV\HolaSDL\HolaSDL.vcxproj" (Build destinos) -- ERROR.
 
-Compilación correcta.
+ERROR al compilar.
 
-Tiempo transcurrido 00:00:07.08
+Tiempo transcurrido 00:00:03.10
