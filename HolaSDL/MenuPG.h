@@ -15,7 +15,7 @@ protected:
 	void initObjetos();
 	static void salir(juegoPG* jug) { jug -> setSalir(); }
 	static void jugar(juegoPG* jug) { jug->stateChange(new PlayPG(jug, jug->getFactoria())); }
-	static void config(juegoPG* jug){ jug->stateChange(new Configuracion(jug)); }
+	static void config(juegoPG* jug){ jug->stateChange(new Configuracion(jug)); /*jug->setFactoria(FBouncingBalls);*/ }
 	~MenuPG();
 };
 #endif

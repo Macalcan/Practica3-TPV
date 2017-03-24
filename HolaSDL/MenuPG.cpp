@@ -26,7 +26,7 @@ MenuPG::~MenuPG()
 	objetos[0] = nullptr;
 	delete objetos[1];
 	objetos[1] = nullptr;
-	delete objetos[2];
-	objetos[2] = nullptr;
+	/*delete objetos[2];
+	objetos[2] = nullptr;*/
 }
 

@@ -88,7 +88,7 @@
       <Filter>Archivos de código fuente\Estados</Filter>
     </ClCompile>
     <ClCompile Include="Configuracion.cpp">
-      <Filter>Archivos de código fuente</Filter>
+      <Filter>Archivos de código fuente\Estados</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -156,7 +156,7 @@
       <Filter>Archivos de encabezado\Factorias</Filter>
     </ClInclude>
     <ClInclude Include="Configuracion.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Estados</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

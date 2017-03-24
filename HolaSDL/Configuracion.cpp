@@ -1,4 +1,8 @@
 #include "Configuracion.h"
+#include "MenuPG.h"
+
+static void globos(juegoPG* jug){ jug->setFactoria(FGlobos); jug->stateChange(new MenuPG(jug)); }
+static void bBalls(juegoPG* jug){ jug->setFactoria(FBouncingBalls); jug->stateChange(new MenuPG(jug)); }
 
 
 Configuracion::Configuracion(juegoPG* juego) : EstadoPG(juego)
@@ -17,8 +21,9 @@ void Configuracion::initObjetos(){
 
 Configuracion::~Configuracion()
 {
-	delete objetos[0];
+	/*delete objetos[0];
 	objetos[0] = nullptr;
 	delete objetos[1];
-	objetos[1] = nullptr;
+	objetos[1] = nullptr;*/
 }
+

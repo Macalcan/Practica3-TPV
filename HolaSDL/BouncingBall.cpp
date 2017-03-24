@@ -4,8 +4,8 @@
 BouncingBall::BouncingBall(juegoPG* jueg, Texturas_t texturas, int px, int py) : ObjetoPG(jueg, texturas, px, py)
 {
 	rectObjeto.h = rectObjeto.w = 50; //dimension de la pelota
-	dx = 20;//rand() % 20 - 20; //rebote aleatorio inicial
-	dy = -20;//rand() % 20 - 20;
+	dx = rand() % 100 - 80; //rebote aleatorio inicial
+	dy = rand() % 100 - 120;
 	visible = true;
 	puntos = rand() % 100 + 50;
 	explotado = false;
@@ -31,13 +31,15 @@ void BouncingBall::update(){
 	rectObjeto.x = rectObjeto.x + dx;
 	rectObjeto.y = rectObjeto.x + dy;
 
-	if (rectObjeto.x >= 500 || rectObjeto.x <= 10){
+	if (rectObjeto.x >= 500 || rectObjeto.x <= 20){
 		dx = -dx;
-		puntos -= 10;
+		if(puntos > 0)
+			puntos -= 10;
 	}
-	if (rectObjeto.y >= 600 || rectObjeto.y <= 10){
+	if (rectObjeto.y >= 600 || rectObjeto.y <= 20){
 		dy = -dy;
-		puntos -= 10;
+		if (puntos > 0)
+			puntos -= 10;
 	}
 	
 }
