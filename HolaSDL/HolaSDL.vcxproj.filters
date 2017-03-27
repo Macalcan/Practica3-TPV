@@ -90,6 +90,9 @@
     <ClCompile Include="Configuracion.cpp">
       <Filter>Archivos de código fuente\Estados</Filter>
     </ClCompile>
+    <ClCompile Include="ProgrammableBouncingBall.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="juegoPG.h">
@@ -157,6 +160,12 @@
     </ClInclude>
     <ClInclude Include="Configuracion.h">
       <Filter>Archivos de encabezado\Estados</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgrammableBouncingBall.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="PBBExternAccess.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

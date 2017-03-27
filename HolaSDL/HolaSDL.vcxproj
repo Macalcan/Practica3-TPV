@@ -84,6 +84,7 @@
     <ClCompile Include="PausaPG.cpp" />
     <ClCompile Include="PlayPg.cpp" />
     <ClCompile Include="PremioPG.cpp" />
+    <ClCompile Include="ProgrammableBouncingBall.cpp" />
     <ClCompile Include="TexturasSDL.cpp" />
     <ClCompile Include="Vago.cpp" />
   </ItemGroup>
@@ -106,8 +107,10 @@
     <ClInclude Include="ObjetoJuego.h" />
     <ClInclude Include="ObjetoPG.h" />
     <ClInclude Include="PausaPG.h" />
+    <ClInclude Include="PBBExternAccess.h" />
     <ClInclude Include="PlayPg.h" />
     <ClInclude Include="PremioPG.h" />
+    <ClInclude Include="ProgrammableBouncingBall.h" />
     <ClInclude Include="TexturasSDL.h" />
     <ClInclude Include="Vago.h" />
   </ItemGroup>
