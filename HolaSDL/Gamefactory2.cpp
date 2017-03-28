@@ -15,7 +15,7 @@ ObjetoJuego* Gamefactory2::createNormalElement(int i){
 }
 
 ObjetoJuego* Gamefactory2::createSpecialElement(){
-	return new  Vago(ju, TPelota, 0, 0);
+	return new  Vago(ju, TPelota, 0, 0); //REVISAR, ver como crear vago sin una textura
 
 }
 

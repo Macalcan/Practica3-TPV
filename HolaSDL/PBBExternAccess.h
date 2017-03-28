@@ -14,10 +14,10 @@ public:
 	virtual void setDY(int dy) = 0;
 	//metodo para obtener el numero de clicks hasta el momento
 	//int o void???
-	virtual void getClicks() = 0;
+	virtual int getClicks() = 0;
 	//metodos para consultar o cambiar los puntos del objeto
 	virtual int getPoints() = 0;
-	virtual void setPoints(int points) = 0;
+	virtual void setPoints(int puntos) = 0;
 	//metodo para que el objeto desaparezca
 	virtual void setVisible(bool visible) = 0;
 

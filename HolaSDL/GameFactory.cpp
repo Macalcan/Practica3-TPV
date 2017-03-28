@@ -18,10 +18,6 @@ ObjetoJuego* GameFactory::createNormalElement(int i){
 		return new GlobosPG(ju, TGloboN, x, y);
 	else 
 		return new GloboA(ju, TGloboM, x, y);
-	/*else if (type == 'a')
-		return new GloboA(juego, TGloboM, x, y);
-	else 
-		return new BouncingBall(juego, TPelota, x, y);*/
 }
 
 ObjetoJuego* GameFactory::createSpecialElement (){
@@ -29,9 +25,6 @@ ObjetoJuego* GameFactory::createSpecialElement (){
 	y = rand() % 450;
 	
 	return new  MariposaPG(ju, Tmariposa, x, y);
-	
-	/*else if(type == 'v')
-		return new Vago();*/
 }
 
 ObjetoJuego* GameFactory::createPrizeElement(){
@@ -39,9 +32,6 @@ ObjetoJuego* GameFactory::createPrizeElement(){
 	y = rand() % 450;
 	
 	return new PremioPG(ju, Tpremio, x, y);
-	
-	/*else if (type == 'v')
-		return new Vago();*/
 }
 
 GameFactory::~GameFactory()

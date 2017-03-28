@@ -22,8 +22,7 @@ PlayPG::PlayPG(juegoPG* ju, GameElementFactoryV* fac) : EstadoPG(ju)
 void PlayPG::initObjetos() {
 	
 	for (int i = 0; i < dim; i++){//creamos un globo en cada vuelta en una posicion aleatoria en el rectangulo de la ventana
-		/*x = rand() % 450;
-		y = rand() % 450;*/
+
 		if (i % 2 == 0)
 			objetos.emplace_back(factory->createNormalElement(i));//new GlobosPG(juego, TGloboN, x, y)); //cada globo tendrá la textura 0 o la textura 1
 		else
