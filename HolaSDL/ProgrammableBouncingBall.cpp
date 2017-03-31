@@ -13,11 +13,24 @@ void ProgrammableBouncingBall::run(PBBVMprog​& prog, PBBExternAccess& ball){
 	{
 		switch (instr[pc])
 		{
+		case PBBVMprog​::PUSH:
+			prog.push(*((int*)(instr + pc + 1)));
+			pc = pc + sizeof(int);
+			break;
+		case PBBVMprog​::ADD:
+			prog.push(prog.pop() + prog.pop());
+			break;
 		case PBBVMprog​::GET_DX:
-			ball.getDX();
+			prog.push(ball.getDX());
 			break;
 		case PBBVMprog​::GET_DY:
-			ball.getDY();
+			prog.push(ball.getDY());
+			break;
+		case PBBVMprog​::SET_DX:
+			ball.setDX(prog.pop());
+			break;
+		case PBBVMprog​::SET_DY:
+			ball.setDY(prog.pop());
 			break;
 		}
 	}

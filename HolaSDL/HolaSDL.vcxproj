@@ -82,6 +82,7 @@
     <ClCompile Include="MenuPG.cpp" />
     <ClCompile Include="ObjetoPG.cpp" />
     <ClCompile Include="PausaPG.cpp" />
+    <ClCompile Include="PBBVM.cpp" />
     <ClCompile Include="PBBVMprog​.cpp" />
     <ClCompile Include="PlayPg.cpp" />
     <ClCompile Include="PremioPG.cpp" />
@@ -109,6 +110,7 @@
     <ClInclude Include="ObjetoPG.h" />
     <ClInclude Include="PausaPG.h" />
     <ClInclude Include="PBBExternAccess.h" />
+    <ClInclude Include="PBBVM.h" />
     <ClInclude Include="PBBVMprog​.h" />
     <ClInclude Include="PlayPg.h" />
     <ClInclude Include="PremioPG.h" />

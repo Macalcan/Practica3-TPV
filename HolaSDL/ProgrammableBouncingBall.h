@@ -3,9 +3,15 @@
 #include "PBBExternAccess.h"
 #include "BouncingBall.h"
 #include "PBBVMprog​.h"
+#include <iostream>
+using namespace std;
+
 
 class ProgrammableBouncingBall : public PBBExternAccess, public BouncingBall
 {
+	PBBVMprog​ prog;
+	//ProgrammableBouncingBall vm; 
+
 public:
 	ProgrammableBouncingBall(juegoPG* jueg, Texturas_t texturas, int px, int py);
 	~ProgrammableBouncingBall();
@@ -23,7 +29,12 @@ protected:
 	
 	
 
-	virtual void update();
+	virtual void update(){
+		if (rand()) { // some condition
+			vm.run(prog, *this);
+		}
+		cout << "I am at position (" << x << "," << y << ")" << endl;
+	}
 	virtual bool onClick();
 	void run(PBBVMprog​& prog, PBBExternAccess& ball);
 };
