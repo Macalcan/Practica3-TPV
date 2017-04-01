@@ -4,17 +4,20 @@
 #include "BouncingBall.h"
 #include "PBBVMprog​.h"
 #include <iostream>
+#include "PBBVM.h"
+#include "PlayPG.h"
 using namespace std;
 
 
 class ProgrammableBouncingBall : public PBBExternAccess, public BouncingBall
 {
-	PBBVMprog​ prog;
-	//ProgrammableBouncingBall vm; 
+	
 
 public:
-	ProgrammableBouncingBall(juegoPG* jueg, Texturas_t texturas, int px, int py);
-	~ProgrammableBouncingBall();
+	ProgrammableBouncingBall(juegoPG* jueg, Texturas_t texturas, int px, int py, string vmprog);
+	~ProgrammableBouncingBall(){}
+	PBBVM vm;
+	PBBVMprog​ prog;
 protected:
 	int clicks;
 
@@ -25,17 +28,14 @@ protected:
 	virtual int getClicks(){ return clicks; }
 	virtual int getPoints(){ return puntos; }
 	virtual void setPoints(int puntos){ this->puntos = puntos; }
-	virtual void setVisible(bool visible){ this->visible = visible; }
+	virtual void deactivate(){ visible = false; dynamic_cast<PlayPG*>(juego->topState())->newBaja(this); }
+	virtual void addPoints(int points){ puntos += points; }
 	
-	
-
-	virtual void update(){
-		if (rand()) { // some condition
-			vm.run(prog, *this);
-		}
-		cout << "I am at position (" << x << "," << y << ")" << endl;
-	}
+	virtual void update();
 	virtual bool onClick();
-	void run(PBBVMprog​& prog, PBBExternAccess& ball);
+	
+	
+	
+	
 };
 #endif
