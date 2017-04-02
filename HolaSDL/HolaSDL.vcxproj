@@ -120,6 +120,10 @@
     <ClInclude Include="TexturasSDL.h" />
     <ClInclude Include="Vago.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\prog1.vm" />
+    <None Include="..\..\prog2.vm" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

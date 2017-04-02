@@ -14,7 +14,7 @@ const int ancho = 550; //dimensiones de la ventana del juego
 const int alto = 600;
 const int numText = 11;
 enum Texturas_t { TFondo, TGloboN, TGloboM, Tmariposa, Tpremio, TPlay, TMenu, TExit, TScore, TResume, TPelota };
-enum Factorias_F {FGlobos, FBouncingBalls};
+enum Factorias_F {FGlobos, FBouncingBalls, FPBB};
 
 class juegoPG
 {

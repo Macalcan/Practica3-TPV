@@ -186,4 +186,12 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\prog1.vm">
+      <Filter>Archivos de código fuente</Filter>
+    </None>
+    <None Include="..\..\prog2.vm">
+      <Filter>Archivos de código fuente</Filter>
+    </None>
+  </ItemGroup>
 </Project>

@@ -3,7 +3,7 @@
 
 static void globos(juegoPG* jug){ jug->setFactoria(FGlobos); jug->stateChange(new MenuPG(jug)); }
 static void bBalls(juegoPG* jug){ jug->setFactoria(FBouncingBalls); jug->stateChange(new MenuPG(jug)); }
-
+static void pbb(juegoPG* jug){ jug->setFactoria(FPBB); jug->stateChange(new MenuPG(jug)); }
 
 Configuracion::Configuracion(juegoPG* juego) : EstadoPG(juego)
 {
@@ -17,6 +17,9 @@ void Configuracion::initObjetos(){
 	x = 450 / 2;
 	y = 450 / 2 + 150;
 	objetos.emplace_back(new BotonPG(juego, TExit, x, y, bBalls));
+	x = 450 / 2;
+	y = 450 / 2 + 250;
+	objetos.emplace_back(new BotonPG(juego, TExit, x, y, pbb));
 }
 
 Configuracion::~Configuracion()

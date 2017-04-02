@@ -15,6 +15,7 @@
 #include "PausaPG.h"
 #include "GameFactory.h"
 #include "Gamefactory2.h"
+#include "PBBFactory.h"
 using namespace std;
 
 juegoPG::juegoPG()
@@ -50,6 +51,7 @@ juegoPG::juegoPG()
 	//factorias
 	factorias.emplace_back(new GameFactory(this));
 	factorias.emplace_back(new Gamefactory2(this));
+	factorias.emplace_back(new PBBFactory(this));
 	factory = factorias[0];
 }
 //--------------------------------------------------------------------------------//
