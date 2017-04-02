@@ -18,7 +18,7 @@ void Configuracion::initObjetos(){
 	y = 450 / 2 + 150;
 	objetos.emplace_back(new BotonPG(juego, TExit, x, y, bBalls));
 	x = 450 / 2;
-	y = 450 / 2 + 250;
+	y = 450 / 2 + 280;
 	objetos.emplace_back(new BotonPG(juego, TExit, x, y, pbb));
 }
 
