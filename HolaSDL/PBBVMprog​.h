@@ -9,7 +9,7 @@ class PBBVMprog​
 {
 	static const int MAX_SIZE = 100;
 	char instr[MAX_SIZE];
-	int size;
+	int size = 0;
 
 public:
 
@@ -24,6 +24,7 @@ public:
 		in.read(instr, size);
 
 		in.close();
+		
 	}
 
 
@@ -45,6 +46,9 @@ public:
 		ifstream in;
 		ofstream out;
 
+		in.open(file);
+		out.open(outfile, ios::binary);
+
 		char bytecode[MAX_SIZE];
 		int addr[MAX_SIZE];
 		int bytecodeNum = -1;
@@ -56,7 +60,7 @@ public:
 		while (!in.eof())
 		{
 			in >> keyword;
-			if (in.good())
+			if (/*in.good()*/ !in.bad())
 			{
 				bytecodeNum++;
 				addr[bytecodeNum] = pc;
@@ -101,7 +105,8 @@ public:
 						*((int*)(bytecode + pc)) = addr[n];
 					}
 					else {
-						pending[pc] = true;
+						pending[bytecodeNum] = true;
+						*((int*)(bytecode + pc)) = n;
 					}
 					pc = pc + sizeof(int);
 				}
@@ -114,7 +119,8 @@ public:
 							*((int*)(bytecode + pc)) = addr[n];
 						}
 						else {
-							pending[pc] = true;
+							pending[bytecodeNum] = true;
+							*((int*)(bytecode + pc)) = n;
 						}
 						pc = pc + sizeof(int);
 					}

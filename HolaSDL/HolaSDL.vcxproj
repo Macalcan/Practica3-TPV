@@ -121,8 +121,12 @@
     <ClInclude Include="Vago.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\TPV-P1\P1\HolaSDL\progcom.vm" />
     <None Include="..\..\prog1.vm" />
     <None Include="..\..\prog2.vm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="prog.vm.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

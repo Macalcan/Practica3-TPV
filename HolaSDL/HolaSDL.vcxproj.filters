@@ -193,5 +193,13 @@
     <None Include="..\..\prog2.vm">
       <Filter>Archivos de código fuente</Filter>
     </None>
+    <None Include="..\..\..\TPV-P1\P1\HolaSDL\progcom.vm">
+      <Filter>Archivos de código fuente</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="prog.vm.txt">
+      <Filter>Archivos de código fuente</Filter>
+    </Text>
   </ItemGroup>
 </Project>

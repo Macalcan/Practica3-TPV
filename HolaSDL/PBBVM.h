@@ -7,16 +7,16 @@ class PBBVM
 public:
 	PBBVM(){}
 
-	static const int MAX_SIZE = 100;
+	static const int MAX_SIZE = 150;
 	int instr[MAX_SIZE];
-	int size;
+	int instSize = 0;
 
 	void push(int n){
-		instr[size++] = n;
+		instr[instSize++] = n;
 	}
 
 	int pop(){
-		return instr[size--];
+		return instr[instSize--];
 	}
 
 	void run(PBBVMprog​& prog, PBBExternAccess& ball){
@@ -60,11 +60,12 @@ public:
 			case PBBVMprog​::GAIN_POINTS:
 				ball.addPoints(pop());
 				break;
-			case PBBVMprog​::SUB:
-				push(pop() - pop());
-				break;
 			case PBBVMprog​::MUL:
 				push(pop() * pop());
+				break;
+				
+			case PBBVMprog​::SUB:
+				push(pop() - pop());
 				break;
 			case PBBVMprog​::GOTO:
 				pc = *((int*)(instr + pc + 1));

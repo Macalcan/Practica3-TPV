@@ -21,8 +21,8 @@ void GameOverPG::initObjetos(){
 
 GameOverPG::~GameOverPG()
 {
-	delete objetos[0];
+	/*delete objetos[0];
 	objetos[0] = nullptr;
 	delete objetos[1];
-	objetos[1] = nullptr;
+	objetos[1] = nullptr;*/
 }

@@ -13,7 +13,7 @@ ObjetoJuego* PBBFactory::createNormalElement(int i){
 	//if (i % 2 == 0)
 		//return new ProgrammableBouncingBall(juego, TPelota, x, y, "prog1.vm");
 	//else 
-		return new ProgrammableBouncingBall(juego, TPelota, x, y, "prog2.vm");
+		return new ProgrammableBouncingBall(juego, TPelota, x, y, "progcom.vm");
 }
 
 ObjetoJuego* PBBFactory::createSpecialElement(){

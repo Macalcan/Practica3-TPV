@@ -1,4 +1,4 @@
-#include "TexturasSDL.h"
+﻿#include "TexturasSDL.h"
 #include "PlayPG.h"
 #include "PremioPG.h"
 #include "MariposaPG.h"
@@ -9,10 +9,16 @@
 #include "GameOverPG.h"
 #include "ProgrammableBouncingBall.h"
 #include "BouncingBall.h"
+#include "PBBFactory.h"
+#include "PBBVMprog​.h"
 
 PlayPG::PlayPG(juegoPG* ju, GameElementFactoryV* fac) : EstadoPG(ju)
 {
 	factory = fac;
+	if (typeid(*factory) == typeid(PBBFactory))
+	{
+		PBBVMprog​::compile("prog1.vm", "progcom.vm");
+	}
 	initObjetos();
 }
 
@@ -21,7 +27,7 @@ void PlayPG::initObjetos() {
 	for (int i = 0; i < dim; i++){//creamos un globo en cada vuelta en una posicion aleatoria en el rectangulo de la ventana
 
 		if (i % 2 == 0)
-			objetos.emplace_back(factory->createNormalElement(i));//new GlobosPG(juego, TGloboN, x, y)); //cada globo tendr� la textura 0 o la textura 1
+			objetos.emplace_back(factory->createNormalElement(i));//new GlobosPG(juego, TGloboN, x, y)); //cada globo tendrá la textura 0 o la textura 1
 		else
 			objetos.emplace_back(factory->createNormalElement(i));//new GloboA(juego, TGloboM, x, y));
 	}
@@ -64,7 +70,7 @@ void PlayPG::newPuntos(ObjetoJuego* po) {
 	else if (typeid(*po) == typeid(BouncingBall))
 		puntos += dynamic_cast<BouncingBall*>(po)->getPuntos();
 	else if (typeid(*po) == typeid(ProgrammableBouncingBall))
-		puntos += dynamic_cast<ProgrammableBouncingBall*>(po)->getPoints();
+		puntos += dynamic_cast<ProgrammableBouncingBall*>(po)->getPuntos();
 }
 //--------------------------------------------------------------------------------//
 void PlayPG::newPremio() {

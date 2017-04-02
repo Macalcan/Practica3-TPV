@@ -29,11 +29,24 @@ protected:
 	virtual int getClicks(){ return clicks; }
 	
 	virtual void setPoints(int puntos){ this->puntos = puntos; }
-	virtual void deactivate(){ visible = false; dynamic_cast<PlayPG*>(juego->topState())->newBaja(this); }
+	virtual void deactivate(){ 
+		explotado = true;
+		visible = false; 
+		dynamic_cast<PlayPG*>(juego->topState())->newPuntos(this);
+		dynamic_cast<PlayPG*>(juego->topState())->newBaja(this);		
+	}
 	virtual void addPoints(int points){ puntos += points; }
 	
-	virtual void update();
-	virtual bool onClick();
+	
+	virtual bool onClick(){
+		if (ObjetoPG::onClick()){
+			clicks++;
+			vm.run(prog, *this);
+			return true;
+		}
+		else
+			return false;
+	}
 	
 	
 	
