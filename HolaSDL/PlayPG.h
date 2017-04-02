@@ -19,7 +19,7 @@ protected:
 	GameElementFactoryV* factory;//Game factory
 	int numMariposas;
 	int numPremios;
-	int dim = 10;
+	int dim = 5;
 	bool gameOver;
 	int numG; //numero de globos
 	//std::vector<TexturasSDL*> texturas;

@@ -24,6 +24,8 @@ PlayPG::PlayPG(juegoPG* ju, GameElementFactoryV* fac) : EstadoPG(ju)
 
 void PlayPG::initObjetos() {
 	
+	dim = 5; 
+
 	for (int i = 0; i < dim; i++){//creamos un globo en cada vuelta en una posicion aleatoria en el rectangulo de la ventana
 
 		if (i % 2 == 0)
