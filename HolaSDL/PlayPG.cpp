@@ -69,10 +69,11 @@ void PlayPG::newPuntos(ObjetoJuego* po) {
 		puntos += dynamic_cast<GlobosPG*>(po)->getPuntos();
 	else if (typeid(*po) == typeid(PremioPG))
 		puntos += dynamic_cast<PremioPG*>(po)->getPuntos();
+	else if (typeid(*po) == typeid(ProgrammableBouncingBall))
+	puntos += dynamic_cast<ProgrammableBouncingBall*>(po)->getPoints();	
 	else if (typeid(*po) == typeid(BouncingBall))
 		puntos += dynamic_cast<BouncingBall*>(po)->getPuntos();
-	else if (typeid(*po) == typeid(ProgrammableBouncingBall))
-		puntos += dynamic_cast<ProgrammableBouncingBall*>(po)->getPuntos();
+	
 }
 //--------------------------------------------------------------------------------//
 void PlayPG::newPremio() {

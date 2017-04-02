@@ -14,11 +14,15 @@ class ProgrammableBouncingBall : public PBBExternAccess, public BouncingBall
 	
 
 public:
-	ProgrammableBouncingBall(juegoPG* jueg, Texturas_t texturas, int px, int py, string vmprog);
+	ProgrammableBouncingBall(juegoPG* jueg, Texturas_t texturas, int px, int py, string vmprog) : BouncingBall(jueg, texturas, px, py), prog(vmprog)
+	{
+		clicks = 0;
+		points = 10;
+	}
 	~ProgrammableBouncingBall(){}
 	PBBVM vm;
 	PBBVMprog​ prog;
-	virtual int getPoints(){ return puntos; }
+	virtual int getPoints(){ return points; }
 protected:
 	int clicks;
 
@@ -47,7 +51,7 @@ protected:
 		else
 			return false;
 	}
-	
+	int points;
 	
 	
 	
