@@ -13,13 +13,13 @@ Configuracion::Configuracion(juegoPG* juego) : EstadoPG(juego)
 void Configuracion::initObjetos(){
 	x = 450 / 2;
 	y = 450 / 2;
-	objetos.emplace_back(new BotonPG(juego, TPlay, x, y, globos));
+	objetos.emplace_back(new BotonPG(juego, TBGlobos, x, y, globos));
 	x = 450 / 2;
 	y = 450 / 2 + 150;
-	objetos.emplace_back(new BotonPG(juego, TExit, x, y, bBalls));
+	objetos.emplace_back(new BotonPG(juego, TBB, x, y, bBalls));
 	x = 450 / 2;
 	y = 450 / 2 + 280;
-	objetos.emplace_back(new BotonPG(juego, TExit, x, y, pbb));
+	objetos.emplace_back(new BotonPG(juego, TPbb, x, y, pbb));
 }
 
 Configuracion::~Configuracion()

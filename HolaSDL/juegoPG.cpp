@@ -46,6 +46,10 @@ juegoPG::juegoPG()
 	rutasText.emplace_back("..\\bmps\\TScore.png");
 	rutasText.emplace_back("..\\bmps\\TResume.png");
 	rutasText.emplace_back("..\\bmps\\Pelota.png");
+	rutasText.emplace_back("..\\bmps\\globos.bmp");
+	rutasText.emplace_back("..\\bmps\\config.bmp");
+	rutasText.emplace_back("..\\bmps\\pbb.bmp");
+	rutasText.emplace_back("..\\bmps\\pelotas.bmp");
 	initTexturas();
 	
 	//factorias
