@@ -18,6 +18,7 @@ public:
 	~ProgrammableBouncingBall(){}
 	PBBVM vm;
 	PBBVMprog​ prog;
+	virtual int getPoints(){ return puntos; }
 protected:
 	int clicks;
 
@@ -26,7 +27,7 @@ protected:
 	virtual int getDY(){ return dy; }
 	virtual void setDY(int dy){ this->dy = dy; }
 	virtual int getClicks(){ return clicks; }
-	virtual int getPoints(){ return puntos; }
+	
 	virtual void setPoints(int puntos){ this->puntos = puntos; }
 	virtual void deactivate(){ visible = false; dynamic_cast<PlayPG*>(juego->topState())->newBaja(this); }
 	virtual void addPoints(int points){ puntos += points; }

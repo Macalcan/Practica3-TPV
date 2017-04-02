@@ -10,9 +10,9 @@ PBBFactory::PBBFactory(juegoPG* ju)
 ObjetoJuego* PBBFactory::createNormalElement(int i){
 	int x = rand() % 450;
 	int y = rand() % 450;
-	if (i % 2 == 0)
-		return new ProgrammableBouncingBall(juego, TPelota, x, y, "prog1.vm");
-	else 
+	//if (i % 2 == 0)
+		//return new ProgrammableBouncingBall(juego, TPelota, x, y, "prog1.vm");
+	//else 
 		return new ProgrammableBouncingBall(juego, TPelota, x, y, "prog2.vm");
 }
 

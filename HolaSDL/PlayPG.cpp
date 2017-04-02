@@ -7,10 +7,7 @@
 #include "ObjetoPG.h"
 #include "Error.h"
 #include "GameOverPG.h"
-#include "GameFactory.h"
-#include "Gamefactory2.h"
-
-//QUITAR
+#include "ProgrammableBouncingBall.h"
 #include "BouncingBall.h"
 
 PlayPG::PlayPG(juegoPG* ju, GameElementFactoryV* fac) : EstadoPG(ju)
@@ -66,6 +63,8 @@ void PlayPG::newPuntos(ObjetoJuego* po) {
 		puntos += dynamic_cast<PremioPG*>(po)->getPuntos();
 	else if (typeid(*po) == typeid(BouncingBall))
 		puntos += dynamic_cast<BouncingBall*>(po)->getPuntos();
+	else if (typeid(*po) == typeid(ProgrammableBouncingBall))
+		puntos += dynamic_cast<ProgrammableBouncingBall*>(po)->getPoints();
 }
 //--------------------------------------------------------------------------------//
 void PlayPG::newPremio() {
