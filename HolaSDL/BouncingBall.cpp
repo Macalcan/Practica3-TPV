@@ -28,15 +28,15 @@ bool BouncingBall::onClick(){
 }
 
 void BouncingBall::update(){
-	//rectObjeto.x += dx;
-	//rectObjeto.y += dy;
+	rectObjeto.x += dx;
+	rectObjeto.y += dy;
 
-	if (rectObjeto.x >= 500 || rectObjeto.x <= 20){
+	if (rectObjeto.x >= 450 || rectObjeto.x <= 30){
 		dx = -dx;
 		if(puntos > 0)
 			puntos -= 10;
 	}
-	if (rectObjeto.y >= 600 || rectObjeto.y <= 20){
+	if (rectObjeto.y >= 550 || rectObjeto.y <= 30){
 		dy = -dy;
 		if (puntos > 0)
 			puntos -= 10;

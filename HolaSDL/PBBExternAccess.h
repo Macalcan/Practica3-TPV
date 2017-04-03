@@ -19,7 +19,7 @@ public:
 	virtual void setPoints(int puntos) = 0;
 	virtual void addPoints(int points) = 0;
 	//metodo para que el objeto desaparezca
-	virtual void deactivate() = 0;
+	virtual void disable() = 0;
 
 	virtual ~PBBExternAccess(){}
 };

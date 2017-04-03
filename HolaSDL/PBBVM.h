@@ -18,11 +18,13 @@ public:
 	int pop(){
 		return instr[instSize--];
 	}
+	
 
 	void run(PBBVMprog​& prog, PBBExternAccess& ball){
 		const char* instr = prog.getInstr();
 		int size = prog.getInstructSize();
-		for (int pc = 0; pc < size; pc++)
+		bool deactivate = false;
+		for (int pc = 0; pc < size && !(deactivate); pc++)
 		{
 			switch (instr[pc])
 			{
@@ -55,7 +57,8 @@ public:
 				ball.setPoints(pop());
 				break;
 			case PBBVMprog​::DEACTIVATE:
-				ball.deactivate();
+				ball.disable();
+				deactivate = true;
 				break;
 			case PBBVMprog​::GAIN_POINTS:
 				ball.addPoints(pop());

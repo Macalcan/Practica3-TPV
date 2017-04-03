@@ -33,7 +33,7 @@ protected:
 	virtual int getClicks(){ return clicks; }
 	
 	virtual void setPoints(int puntos){ this->puntos = puntos; }
-	virtual void deactivate(){ 
+	virtual void disable(){ 
 		explotado = true;
 		visible = false; 
 		dynamic_cast<PlayPG*>(juego->topState())->newPuntos(this);
@@ -43,6 +43,7 @@ protected:
 	
 	
 	virtual bool onClick(){
+
 		if (ObjetoPG::onClick()){
 			clicks++;
 			vm.run(prog, *this);

@@ -7,7 +7,7 @@ using namespace std;
 
 class PBBVMprog​
 {
-	static const int MAX_SIZE = 100;
+	static const int MAX_SIZE = 200;
 	char instr[MAX_SIZE];
 	int size = 0;
 
